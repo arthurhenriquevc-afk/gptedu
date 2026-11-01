@@ -1,7 +1,8 @@
 ---
 import Arrow from './Arrow.astro';
-import { audienceLabel, type Service } from '../data/services';
-interface Props { items: Service[]; compact?: boolean; }
-const {items,compact=false} = Astro.props;
+import { audienceLabel, goalLabel, type Service } from '../data/services';
+// question: mostra a pergunta que o serviço responde e o momento, para escolher pela necessidade.
+interface Props { items: Service[]; compact?: boolean; question?: boolean; }
+const {items,compact=false,question=false} = Astro.props;
 ---
-<div class:list={['service-list',{'service-list-compact':compact}]}>{items.map((s)=><a class="service-row" href={`/servicos/${s.slug}/`} data-service-row data-audience={s.audience} data-search={`${s.name} ${s.summary}`.toLocaleLowerCase('pt-BR')}><span class="service-audience">{audienceLabel(s.audience)}</span><div><h3>{s.name}</h3>{!compact&&<p>{s.summary}</p>}</div><Arrow/></a>)}</div>
+<div class:list={['service-list',{'service-list-compact':compact,'service-list-question':question}]}>{items.map((s)=><a class="service-row" href={`/servicos/${s.slug}/`} data-service-row data-audience={s.audience} data-goal={s.goal} data-search={`${s.name} ${s.summary} ${s.question} ${goalLabel(s.goal)}`.toLocaleLowerCase('pt-BR')}><span class="service-audience">{question?goalLabel(s.goal):audienceLabel(s.audience)}</span><div><h3>{s.name}</h3>{question?<p>{s.question} <span class="service-moment">{s.moment}</span></p>:!compact&&<p>{s.summary}</p>}</div><Arrow/></a>)}</div>
