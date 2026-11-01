@@ -81,3 +81,37 @@ test('captura real só carrega o visualizador externo depois do clique',async({p
  await section.getByRole('button',{name:'Explorar a captura'}).click();const frame=section.locator('iframe');await expect(frame).toHaveAttribute('src',/viewer\.holobuilder\.com\/project\//);await expect(frame).toHaveAttribute('title',/captura real/);await expect.poll(()=>external.length).toBeGreaterThan(0);
  await page.setViewportSize({width:390,height:844});await page.goto('/');await expect(page.locator('[data-capture]').getByRole('button',{name:'Explorar a captura'})).toBeHidden();await expect(page.locator('[data-capture-external]')).toBeVisible();
 });
+test('Home filtra serviços por finalidade e volta à lista completa',async({page})=>{
+ await page.goto('/');const finder=page.locator('.finder');const rows=finder.locator('[data-service-row]:visible');await expect(rows).toHaveCount(10);
+ const documentar=finder.getByRole('button',{name:/Documentar/});await documentar.focus();await page.keyboard.press('Enter');await expect(documentar).toHaveAttribute('aria-pressed','true');await expect(rows).toHaveCount(2);await expect(finder.locator('[data-filter-count]')).toHaveText('2 serviços encontrados');
+ await expect(rows.filter({hasText:'As-built e infraestrutura MEP'})).toHaveCount(1);await expect(rows.filter({hasText:'Locação de estacas'})).toHaveCount(0);
+ await finder.getByRole('button',{name:/Apresentar/}).click();await expect(rows).toHaveCount(1);await expect(rows.first()).toContainText('Tour virtual decorado');
+ await finder.getByRole('button',{name:/Todas/}).click();await expect(rows).toHaveCount(10);await expect(documentar).toHaveAttribute('aria-pressed','false');
+});
+test('diretório combina público, finalidade e busca, com estado vazio',async({page})=>{
+ await page.goto('/servicos/');const rows=page.locator('[data-service-row]:visible');const goal=page.getByLabel('Finalidade');
+ await goal.selectOption('apresentar');await expect(rows).toHaveCount(1);
+ await page.getByRole('button',{name:'Para empresas',exact:true}).click();await expect(rows).toHaveCount(0);await expect(page.getByText('Nenhum serviço encontrado.')).toBeVisible();
+ await page.getByRole('button',{name:'Todos os serviços',exact:true}).click();await goal.selectOption('conferir');await expect(rows).toHaveCount(2);
+ await page.getByLabel('Buscar por serviço ou necessidade').fill('estacas executadas');await expect(rows).toHaveCount(1);await expect(rows.first()).toContainText('Conferência de excentricidade');
+});
+test('sem JavaScript a Home mostra os dez serviços e esconde os filtros',async({browser})=>{
+ const context=await browser.newContext({javaScriptEnabled:false});const page=await context.newPage();await page.goto('http://127.0.0.1:4321/');
+ await expect(page.locator('.finder [data-service-row]:visible')).toHaveCount(10);await expect(page.locator('[data-goal-filters]')).toBeHidden();
+ await page.goto('http://127.0.0.1:4321/servicos/');await expect(page.locator('[data-goal-field]')).toBeHidden();await context.close();
+});
+test('página de serviço resume, compara, separa fontes e explica relacionados',async({page})=>{
+ await page.goto('/servicos/conferencia-de-excentricidade/');const facts=page.getByLabel('Resumo do serviço');await expect(facts).toContainText('As estacas executadas estão onde a referência previa?');await expect(facts).toContainText('Com as fundações executadas');
+ const table=page.locator('#comparacao table');await expect(table.locator('thead')).toContainText('Locação de estacas');await expect(table.locator('tbody tr')).toHaveCount(3);await expect(table).toContainText('Onde cada estaca prevista no projeto deve ser marcada em campo?');
+ await expect(page.locator('#alcance')).toHaveCount(0);await expect(page.locator('aside').getByRole('link',{name:'O que o registro alcança'})).toHaveCount(0);
+ await expect(page.locator('.related .service-row').first()).toContainText('A locação estabelece a posição de projeto');
+ await page.goto('/servicos/as-built-mep/');await expect(page.locator('#alcance')).toContainText('Captura direta');await expect(page.locator('#alcance')).toContainText('Trechos já cobertos por forro, parede ou piso.');await expect(page.locator('#solicitacao .checklist li')).toHaveCount(4);
+ await page.locator('#solicitacao').getByRole('link',{name:'Preparar uma solicitação'}).click();await expect(page.getByLabel('Serviço de interesse')).toHaveValue('as-built-mep');
+ await page.goto('/servicos/escaneamento-de-fachada/');await expect(page.locator('#comparacao')).toHaveCount(0);
+ await page.setViewportSize({width:360,height:740});await page.goto('/servicos/levantamento-de-interiores/');await expect(page.locator('#comparacao td').first()).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+});
+test('etapa da obra entra no resumo copiado',async({page,context})=>{
+ await context.grantPermissions(['clipboard-read','clipboard-write']);await page.goto('/contato/?servico=as-built-mep');
+ await page.getByLabel('Nome',{exact:true}).fill('Pessoa de teste');await page.getByLabel('Etapa da obra ou do projeto').selectOption('Instalações aparentes, antes dos fechamentos');
+ await page.getByRole('button',{name:'Copiar resumo'}).click();const text=await page.evaluate(()=>navigator.clipboard.readText());expect(text).toContain('Etapa: Instalações aparentes, antes dos fechamentos');expect(text).toContain('Serviço: As-built e infraestrutura MEP');
+});
