@@ -120,7 +120,8 @@ Mídia com cantos retos. Elementos compactos usam 4px; botões, campos e notas u
 ### Do
 
 - Preservar espaço, hierarquia e rigor dos alinhamentos.
-- Identificar imagens conceituais enquanto não houver acervo autorizado.
+- Identificar imagens conceituais enquanto não houver acervo autorizado. A única imagem real é a prévia da seção "Captura real", tirada da própria captura.
+- Carregar conteúdo de terceiros só depois de uma ação do visitante: o visualizador FARO Sphere XG da Home entra como iframe apenas após o clique em "Explorar a captura"; até 600px, o caminho é abrir em nova aba.
 - Adaptar a composição para assegurar leitura em cada tamanho.
 - Explicitar condições e entregáveis que dependem do escopo.
 
