@@ -1,0 +1,12 @@
+---
+import Arrow from './Arrow.astro';
+const viewer='https://viewer.holobuilder.com/project/6bb957a5-44fd-4037-983c-b5086c0b3a59';
+---
+<section class="capture section" aria-labelledby="capture-title" data-capture>
+ <div class="capture-heading"><span class="capture-label">Captura real</span><h2 id="capture-title">Percorra um levantamento feito pela UNION3D.</h2><p>Apartamento em obra, registrado com escaneamento a laser 3D enquanto as instalações ainda estavam aparentes. Caminhe entre os pontos de captura, alterne entre fotografia 360 e nuvem de pontos e meça distâncias no próprio visualizador.</p></div>
+ <div class="capture-stage" data-capture-stage>
+  <img src="/images/captura-real-sala.webp" width="1104" height="580" alt="Fotografia 360 da captura: sala de apartamento em obra, com alvenaria aparente, laje nervurada, tubulação laranja e cabos amarelos no teto e janela ao fundo." loading="lazy"/>
+  <div class="capture-overlay"><div class="capture-actions"><button type="button" class="button button-light" data-capture-load hidden>Explorar a captura <Arrow/></button><a class="button button-light" href={viewer} target="_blank" rel="noopener" data-capture-external>Abrir o visualizador<span class="visually-hidden"> em nova aba</span> <Arrow/></a></div><p>O visualizador vem da plataforma FARO Sphere XG, um serviço externo que pode gravar cookies. Ele só é carregado quando você escolhe abrir.</p></div>
+ </div>
+ <p class="capture-caption">Imagem de prévia extraída da própria captura. Hospedagem: FARO Sphere XG. <a href={viewer} target="_blank" rel="noopener">Abrir em nova aba</a></p>
+</section>

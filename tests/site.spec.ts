@@ -75,3 +75,9 @@ test('contato traz as dúvidas gerais sem repetir o preparo da solicitação',as
  await page.goto('/contato/');const faq=page.locator('.faq-list details');await expect(faq).toHaveCount(4);await expect(page.locator('.faq-list')).not.toContainText('O que ajuda a preparar');
  await faq.first().locator('summary').focus();await page.keyboard.press('Enter');await expect(faq.first().locator('p')).toBeVisible();
 });
+test('captura real só carrega o visualizador externo depois do clique',async({page})=>{
+ const external:string[]=[];await page.route('**/viewer.holobuilder.com/**',route=>{external.push(route.request().url());return route.fulfill({contentType:'text/html',body:'<title>visualizador</title>'});});
+ await page.setViewportSize({width:1366,height:900});await page.goto('/');const section=page.locator('[data-capture]');await section.scrollIntoViewIfNeeded();await expect(section.locator('iframe')).toHaveCount(0);await page.waitForTimeout(300);expect(external).toEqual([]);
+ await section.getByRole('button',{name:'Explorar a captura'}).click();const frame=section.locator('iframe');await expect(frame).toHaveAttribute('src',/viewer\.holobuilder\.com\/project\//);await expect(frame).toHaveAttribute('title',/captura real/);await expect.poll(()=>external.length).toBeGreaterThan(0);
+ await page.setViewportSize({width:390,height:844});await page.goto('/');await expect(page.locator('[data-capture]').getByRole('button',{name:'Explorar a captura'})).toBeHidden();await expect(page.locator('[data-capture-external]')).toBeVisible();
+});
