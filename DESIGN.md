@@ -122,7 +122,7 @@ Mídia com cantos retos. Elementos compactos usam 4px; botões, campos e notas u
 ### Do
 
 - Preservar espaço, hierarquia e rigor dos alinhamentos.
-- Identificar imagens conceituais enquanto não houver acervo autorizado. Imagens reais: a prévia da seção "Captura real" e as capturas das páginas de As-built MEP, fachada, excentricidade, locação de estacas e interiores.
+- Identificar imagens conceituais enquanto não houver acervo autorizado. Imagens reais: a prévia da seção "Captura real" e as capturas das páginas de As-built MEP, fachada, conferência da excentricidade, locação das linhas de eixo das estacas e interiores.
 - Capturas reais nas páginas de serviço: substituem a imagem larga do topo (altura maior que a conceitual, `object-position` por imagem) e, quando há um detalhe, ele entra no fim de “O que este serviço faz” com borda `line`, até 900px. A legenda começa com “Captura real da UNION3D” em `ink` e peso 600, e descreve só o que está visível, sem cliente, local, precisão ou prazo.
 - Carregar conteúdo de terceiros só depois de uma ação do visitante: o visualizador FARO Sphere XG da Home entra como iframe apenas após o clique em "Explorar a captura"; até 600px, o caminho é abrir em nova aba.
 - Adaptar a composição para assegurar leitura em cada tamanho.

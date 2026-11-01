@@ -17,7 +17,7 @@ export const realImages: Record<string, ServiceImages> = {
       alt:'Nuvem de pontos colorida de um edifício residencial alto, com a torre de apartamentos, um terraço sobre o embasamento e palmeiras junto à base.',
       caption:'Nuvem de pontos da fachada de um edifício residencial.' },
   },
-  'conferencia-de-excentricidade': {
+  'conferencia-da-excentricidade-das-estacas': {
     main: { src:'/images/real/estacas-planta-nuvem.webp', width:1227, height:575,
       alt:'Vista superior da nuvem de pontos de um terreno em fase de fundações, com os blocos e as estacas do projeto sobrepostos.',
       caption:'Vista superior da nuvem de pontos do terreno, com o projeto de fundações sobreposto.' },
@@ -25,7 +25,7 @@ export const realImages: Record<string, ServiceImages> = {
       alt:'Detalhe em vista superior da nuvem de pontos, com o contorno de um bloco do projeto, a estaca registrada e anotações de dimensões.',
       caption:'Detalhe de um bloco: o contorno do projeto sobre o que a nuvem de pontos registrou em campo.' },
   },
-  'locacao-de-estacas': {
+  'locacao-das-linhas-de-eixo-das-estacas': {
     main: { src:'/images/real/estacas-terreno-isometrico.webp', width:1241, height:740, position:'center 60%',
       alt:'Nuvem de pontos em perspectiva de um terreno em fase de fundações, cercado por edificações vizinhas, com as marcações do projeto sobrepostas.',
       caption:'Nuvem de pontos do terreno e das edificações vizinhas, com o projeto de fundações sobreposto.' },

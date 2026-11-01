@@ -9,15 +9,16 @@ Status: arquitetura definida a partir do briefing; métodos e janelas específic
   - Para empresas `/servicos/empresas/`
     1. Conferência de topografia `/servicos/conferencia-de-topografia/`
     2. Mapeamento aéreo com drone `/servicos/mapeamento-aereo-com-drone/`
-    3. Locação de estacas `/servicos/locacao-de-estacas/`
-    4. Locação de linhas de eixo `/servicos/locacao-de-linhas-de-eixo/`
-    5. Conferência de excentricidade das estacas `/servicos/conferencia-de-excentricidade/`
-    6. As-built de laje protendida `/servicos/as-built-de-laje-protendida/`
-    7. As-built e infraestrutura MEP `/servicos/as-built-mep/`
-    8. Escaneamento de fachada para retrofit `/servicos/escaneamento-de-fachada/`
+    3. Locação das linhas de eixo das estacas `/servicos/locacao-das-linhas-de-eixo-das-estacas/`
+    4. Conferência da excentricidade das estacas `/servicos/conferencia-da-excentricidade-das-estacas/`
+    5. As-built de laje protendida `/servicos/as-built-de-laje-protendida/`
+    6. As-built e infraestrutura MEP `/servicos/as-built-mep/`
+    7. Escaneamento de fachada para retrofit `/servicos/escaneamento-de-fachada/`
   - Para profissionais `/servicos/profissionais/`
-    9. Levantamento arquitetônico de interiores `/servicos/levantamento-de-interiores/`
-    10. Tour virtual decorado `/servicos/tour-virtual-decorado/`
+    8. Levantamento arquitetônico de interiores `/servicos/levantamento-de-interiores/`
+    9. Tour virtual decorado `/servicos/tour-virtual-decorado/`
+
+Em 2026-11-01 a empresa confirmou que “Locação de estacas” e “Locação de linhas de eixo” são um só serviço, “Locação das linhas de eixo das estacas”, e que a conferência da locação e a de excentricidade são o mesmo serviço, chamado “Conferência da excentricidade das estacas”.
 - Sobre `/sobre/`
 - Aplicações `/aplicacoes/`
 - Contato e orçamento `/contato/`
@@ -32,7 +33,7 @@ Status: arquitetura definida a partir do briefing; métodos e janelas específic
 | Serviços | Todos: qual solução corresponde à necessidade? | Menu, Home, Sobre → serviço ou categoria | Diretório comparável; identificar serviço |
 | Para empresas | Gestores, engenharia e obra: qual atividade cabe nesta etapa? | Menu, Home, Serviços → serviço | Oito atividades exigem filtro por finalidade e etapa; consultar aplicação |
 | Para profissionais | Arquitetos, designers e marcenarias: registrar ou apresentar um ambiente? | Menu, Home, Serviços → interiores ou tour | Diferencia documentação dimensional de visualização; conhecer solução |
-| Dez serviços | Público específico: o que é, quando faz sentido e o que alinhar? | Busca, índice, janela, relacionados → contato contextualizado | Intenção de busca e decisão próprias; solicitar avaliação do escopo |
+| Nove serviços | Público específico: o que é, quando faz sentido e o que alinhar? | Busca, índice, janela, relacionados → contato contextualizado | Intenção de busca e decisão próprias; solicitar avaliação do escopo |
 | Sobre | Compradores e especificadores: como a empresa conduz o trabalho? | Menu, Home, serviços → serviços ou contato | Aprofunda método e postura sem repetir a Home; conversar sobre projeto |
 | Aplicações | Visitantes sem familiaridade: como usar essas informações? | Home, menu, serviços → serviço pertinente | Exemplos de uso claramente conceituais; compreender aplicação |
 | Contato | Interessados: como iniciar e o que informar? | CTAs e menu → envio real quando integrado | Preserva serviço de origem e aceita dúvida sobre escolha; solicitar avaliação |
@@ -42,7 +43,7 @@ Status: arquitetura definida a partir do briefing; métodos e janelas específic
 
 ## Navegação
 
-Header com marca para Início; Serviços, Sobre, Aplicações e Contato. Serviços abre duas áreas: empresas (oito nomes organizados por finalidade) e profissionais (dois nomes). Um link para o diretório completo permite comparar e navegar por etapa. Desktop: painel alinhado ao header, abertura por clique, teclado e Escape; mobile: menu expansível com subgrupos, sem depender de hover. Página atual identificada. Header aderente compacto para facilitar mudança entre serviços; sem reaparecimentos animados.
+Header com marca para Início; Serviços, Sobre, Aplicações e Contato. Serviços abre duas áreas: empresas (sete nomes organizados por finalidade) e profissionais (dois nomes). Um link para o diretório completo permite comparar e navegar por etapa. Desktop: painel alinhado ao header, abertura por clique, teclado e Escape; mobile: menu expansível com subgrupos, sem depender de hover. Página atual identificada. Header aderente compacto para facilitar mudança entre serviços; sem reaparecimentos animados.
 
 Breadcrumb: Início / Serviços / Público / Serviço. Não usar uma profundidade de URL excessiva: categorias são visões do mesmo catálogo. Cada serviço tem uma URL canônica e aparece em múltiplos agrupamentos.
 
@@ -50,9 +51,9 @@ Breadcrumb: Início / Serviços / Público / Serviço. Não usar uma profundidad
 
 As janelas descrevem acesso à informação, não prazos universais de contratação. O evento concreto será confirmado em cada projeto.
 
-1. **Antes da execução de fundações:** locação de estacas; conferência de referências topográficas conforme escopo. Evento: início da execução dos elementos que dependem da marcação.
-2. **Com fundações executadas e referências acessíveis:** conferência de excentricidade. Evento: recobrimento ou perda do acesso necessário à conferência; condições de campo a validar.
-3. **Durante a estrutura:** linhas de eixo e as-built de laje protendida. Eventos distintos: execução orientada por eixos e recobrimento de elementos cuja documentação se pretende obter. Não afirmar que o laser captura cabos ocultos; etapa e objeto do as-built precisam ser confirmados.
+1. **Antes da execução de fundações:** locação das linhas de eixo das estacas; conferência da locação; conferência de referências topográficas conforme escopo. Evento: entrada dos equipamentos e início da execução dos elementos que dependem da marcação.
+2. **Com fundações executadas e referências acessíveis:** conferência da excentricidade das estacas. Evento: recobrimento ou perda do acesso necessário à conferência; condições de campo a validar.
+3. **Durante a estrutura:** as-built de laje protendida. Evento: recobrimento dos elementos cuja documentação se pretende obter. Não afirmar que o laser captura cabos ocultos; etapa e objeto do as-built precisam ser confirmados.
 4. **Com instalações aparentes:** as-built MEP. Evento: fechamento de forros, paredes ou outros recobrimentos; registro limitado ao visível e ao acessível e às fontes complementares contratadas.
 5. **Antes da intervenção:** fachada para retrofit e levantamento de interiores. Evento: alteração ou demolição da condição existente relevante ao projeto.
 6. **Conforme a finalidade:** drone, tour virtual e conferências topográficas não vinculadas às etapas acima. Dependem de condições de operação, acesso, objetivo e modalidade confirmada.

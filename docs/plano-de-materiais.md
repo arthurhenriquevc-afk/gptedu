@@ -11,7 +11,7 @@ Na versão institucional final, substituir os estudos por pares correspondentes 
 
 - Marca tipográfica provisória, header, navegação por teclado, menu móvel e breadcrumbs.
 - Títulos, textos, botões, links, legendas e nomes de etapas: texto HTML real, não pixels das composições.
-- Diretório de serviços e suas duas visões por público, com URLs canônicas dos dez serviços.
+- Diretório de serviços e suas duas visões por público, com URLs canônicas dos nove serviços.
 - Modelo de serviço com conteúdo específico, relacionados e contato contextualizado.
 - Animação de representação, seletor de estado e comportamento reduzido de movimento.
 - Janelas em scroll normal com a etapa ativa destacada; sem scroll hijacking. Celular com foco em uma etapa por vez e lista acessível de todas as etapas.

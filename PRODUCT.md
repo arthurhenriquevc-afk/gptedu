@@ -28,7 +28,7 @@ A empresa usa equipamento da linha FARO Focus 3D para escaneamento a laser 3D, c
 
 ## Capabilities and Constraints
 
-Oito serviços para empresas: conferência de topografia; mapeamento aéreo com drone; locação de estacas; locação de linhas de eixo; conferência de excentricidade das estacas; as-built de laje protendida; as-built e infraestrutura MEP; escaneamento de fachada para retrofit. Dois para profissionais: levantamento arquitetônico de interiores; tour virtual decorado. Serviço 11 a definir, em rascunho não comercial. Modalidade do tour a validar. Não emite laudos. Não afirmar captura de instalações ocultas, tolerâncias, formatos ou garantias não confirmadas. Formulário depende de integração e destino reais.
+Sete serviços para empresas: conferência de topografia; mapeamento aéreo com drone; locação das linhas de eixo das estacas; conferência da excentricidade das estacas (inclui a conferência da locação, antes da execução); as-built de laje protendida; as-built e infraestrutura MEP; escaneamento de fachada para retrofit. Dois para profissionais: levantamento arquitetônico de interiores; tour virtual decorado. Serviço 11 a definir, em rascunho não comercial. Modalidade do tour a validar. Não emite laudos. Não afirmar captura de instalações ocultas, tolerâncias, formatos ou garantias não confirmadas. Formulário depende de integração e destino reais.
 
 ## Brand Commitments
 

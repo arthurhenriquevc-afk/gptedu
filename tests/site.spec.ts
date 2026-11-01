@@ -23,7 +23,7 @@ test('contato preserva serviço e não anuncia nem realiza envio sem integraçã
  await page.getByRole('button',{name:'Copiar resumo'}).click();await expect(page.getByRole('status')).toContainText('Resumo copiado');expect(await page.evaluate(()=>navigator.clipboard.readText())).toContain('As-built e infraestrutura MEP');
 });
 test('menu móvel, teclado e páginas não produzem rolagem horizontal',async({page})=>{
- for(const width of [360,390,768,1024,1536]){await page.setViewportSize({width,height:900});for(const route of ['/','/servicos/','/servicos/conferencia-de-excentricidade/','/sobre/','/aplicacoes/','/contato/']){await page.goto(route);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${width} ${route}`).toBe(true);}}
+ for(const width of [360,390,768,1024,1536]){await page.setViewportSize({width,height:900});for(const route of ['/','/servicos/','/servicos/conferencia-da-excentricidade-das-estacas/','/sobre/','/aplicacoes/','/contato/']){await page.goto(route);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`${width} ${route}`).toBe(true);}}
  await page.setViewportSize({width:390,height:844});await page.goto('/');const toggle=page.getByRole('button',{name:'Menu',exact:true});await toggle.click();await expect(toggle).toHaveAttribute('aria-expanded','true');await page.locator('.services-menu summary').click();await expect(page.locator('.mega-menu')).toBeVisible();await page.keyboard.press('Escape');await expect(toggle).toHaveAttribute('aria-expanded','false');await expect(toggle).toBeFocused();
 });
 test('comparação e etapas funcionam com movimento reduzido',async({page})=>{
@@ -82,29 +82,29 @@ test('captura real só carrega o visualizador externo depois do clique',async({p
  await page.setViewportSize({width:390,height:844});await page.goto('/');await expect(page.locator('[data-capture]').getByRole('button',{name:'Explorar a captura'})).toBeHidden();await expect(page.locator('[data-capture-external]')).toBeVisible();
 });
 test('Home filtra serviços por finalidade e volta à lista completa',async({page})=>{
- await page.goto('/');const finder=page.locator('.finder');const rows=finder.locator('[data-service-row]:visible');await expect(rows).toHaveCount(10);
+ await page.goto('/');const finder=page.locator('.finder');const rows=finder.locator('[data-service-row]:visible');await expect(rows).toHaveCount(9);
  const documentar=finder.getByRole('button',{name:/Documentar/});await documentar.focus();await page.keyboard.press('Enter');await expect(documentar).toHaveAttribute('aria-pressed','true');await expect(rows).toHaveCount(2);await expect(finder.locator('[data-filter-count]')).toHaveText('2 serviços encontrados');
- await expect(rows.filter({hasText:'As-built e infraestrutura MEP'})).toHaveCount(1);await expect(rows.filter({hasText:'Locação de estacas'})).toHaveCount(0);
+ await expect(rows.filter({hasText:'As-built e infraestrutura MEP'})).toHaveCount(1);await expect(rows.filter({hasText:'Locação das linhas de eixo das estacas'})).toHaveCount(0);
  await finder.getByRole('button',{name:/Apresentar/}).click();await expect(rows).toHaveCount(1);await expect(rows.first()).toContainText('Tour virtual decorado');
- await finder.getByRole('button',{name:/Todas/}).click();await expect(rows).toHaveCount(10);await expect(documentar).toHaveAttribute('aria-pressed','false');
+ await finder.getByRole('button',{name:/Todas/}).click();await expect(rows).toHaveCount(9);await expect(documentar).toHaveAttribute('aria-pressed','false');
 });
 test('diretório combina público, finalidade e busca, com estado vazio',async({page})=>{
  await page.goto('/servicos/');const rows=page.locator('[data-service-row]:visible');const goal=page.getByLabel('Finalidade');
  await goal.selectOption('apresentar');await expect(rows).toHaveCount(1);
  await page.getByRole('button',{name:'Para empresas',exact:true}).click();await expect(rows).toHaveCount(0);await expect(page.getByText('Nenhum serviço encontrado.')).toBeVisible();
  await page.getByRole('button',{name:'Todos os serviços',exact:true}).click();await goal.selectOption('conferir');await expect(rows).toHaveCount(2);
- await page.getByLabel('Buscar por serviço ou necessidade').fill('estacas executadas');await expect(rows).toHaveCount(1);await expect(rows.first()).toContainText('Conferência de excentricidade');
+ await page.getByLabel('Buscar por serviço ou necessidade').fill('estacas executadas');await expect(rows).toHaveCount(1);await expect(rows.first()).toContainText('Conferência da excentricidade');
 });
-test('sem JavaScript a Home mostra os dez serviços e esconde os filtros',async({browser})=>{
+test('sem JavaScript a Home mostra os nove serviços e esconde os filtros',async({browser})=>{
  const context=await browser.newContext({javaScriptEnabled:false});const page=await context.newPage();await page.goto('http://127.0.0.1:4321/');
- await expect(page.locator('.finder [data-service-row]:visible')).toHaveCount(10);await expect(page.locator('[data-goal-filters]')).toBeHidden();
+ await expect(page.locator('.finder [data-service-row]:visible')).toHaveCount(9);await expect(page.locator('[data-goal-filters]')).toBeHidden();
  await page.goto('http://127.0.0.1:4321/servicos/');await expect(page.locator('[data-goal-field]')).toBeHidden();await context.close();
 });
 test('página de serviço resume, compara, separa fontes e explica relacionados',async({page})=>{
- await page.goto('/servicos/conferencia-de-excentricidade/');const facts=page.getByLabel('Resumo do serviço');await expect(facts).toContainText('As estacas executadas estão onde a referência previa?');await expect(facts).toContainText('Com as fundações executadas');
- const table=page.locator('#comparacao table');await expect(table.locator('thead')).toContainText('Locação de estacas');await expect(table.locator('tbody tr')).toHaveCount(3);await expect(table).toContainText('Onde cada estaca prevista no projeto deve ser marcada em campo?');
+ await page.goto('/servicos/conferencia-da-excentricidade-das-estacas/');const facts=page.getByLabel('Resumo do serviço');await expect(facts).toContainText('As estacas estão onde as linhas de eixo do projeto previam?');await expect(facts).toContainText('Antes da execução ou com as estacas executadas');
+ const table=page.locator('#comparacao table');await expect(table.locator('thead')).toContainText('Locação das linhas de eixo das estacas');await expect(table.locator('tbody tr')).toHaveCount(3);await expect(table).toContainText('Onde ficam, em campo, as linhas de eixo que posicionam as estacas do projeto?');
  await expect(page.locator('#alcance')).toHaveCount(0);await expect(page.locator('aside').getByRole('link',{name:'O que o registro alcança'})).toHaveCount(0);
- await expect(page.locator('.related .service-row').first()).toContainText('A locação estabelece a posição de projeto');
+ await expect(page.locator('.related .service-row').first()).toContainText('A locação materializa as linhas de eixo');
  await page.goto('/servicos/as-built-mep/');await expect(page.locator('#alcance')).toContainText('Captura direta');await expect(page.locator('#alcance')).toContainText('Trechos já cobertos por forro, parede ou piso.');await expect(page.locator('#solicitacao .checklist li')).toHaveCount(4);
  await page.locator('#solicitacao').getByRole('link',{name:'Preparar uma solicitação'}).click();await expect(page.getByLabel('Serviço de interesse')).toHaveValue('as-built-mep');
  await page.goto('/servicos/escaneamento-de-fachada/');await expect(page.locator('#comparacao')).toHaveCount(0);
@@ -116,7 +116,7 @@ test('etapa da obra entra no resumo copiado',async({page,context})=>{
  await page.getByRole('button',{name:'Copiar resumo'}).click();const text=await page.evaluate(()=>navigator.clipboard.readText());expect(text).toContain('Etapa: Instalações aparentes, antes dos fechamentos');expect(text).toContain('Serviço: As-built e infraestrutura MEP');
 });
 test('capturas reais substituem a imagem conceitual só nos serviços com material aprovado',async({page})=>{
- const real=['as-built-mep','escaneamento-de-fachada','conferencia-de-excentricidade','locacao-de-estacas','levantamento-de-interiores'];
+ const real=['as-built-mep','escaneamento-de-fachada','conferencia-da-excentricidade-das-estacas','locacao-das-linhas-de-eixo-das-estacas','levantamento-de-interiores'];
  for(const slug of real){await page.goto(`/servicos/${slug}/`);const figure=page.locator('[data-real-image]');await expect(figure).toContainText('Captura real da UNION3D');await expect(page.getByText('Imagem conceitual de contexto')).toHaveCount(0);
   const img=figure.locator('img');await expect(img).toHaveAttribute('alt',/.{40,}/);expect(await img.evaluate((el:HTMLImageElement)=>el.complete&&el.naturalWidth>0)).toBe(true);
   const json=JSON.parse(fs.readFileSync(path.join('public',(await img.getAttribute('src'))!+'.json'),'utf8'));expect(json.source).toContain('drive.google.com');}

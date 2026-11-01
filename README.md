@@ -49,7 +49,7 @@ Com o preview ativo, `node .impeccable/review/capture.mjs` grava em `.impeccable
 
 ## Páginas e conteúdo
 
-Home, diretório de serviços, duas categorias, dez páginas específicas de serviços, Sobre, Aplicações, Contato, Privacidade e 404. O Serviço 11 e o modelo de projeto ficam em `/rascunhos/`, sem indexação e sem links na navegação comercial.
+Home, diretório de serviços, duas categorias, nove páginas específicas de serviços, Sobre, Aplicações, Contato, Privacidade e 404. O Serviço 11 e o modelo de projeto ficam em `/rascunhos/`, sem indexação e sem links na navegação comercial.
 
 - `src/data/services.ts`: conteúdo específico, limitações, perguntas e relações entre serviços.
 - `src/components/`: navegação, diretório, janelas de obra e componentes compartilhados.
