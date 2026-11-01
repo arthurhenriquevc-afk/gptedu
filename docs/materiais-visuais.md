@@ -9,4 +9,4 @@ Todos os materiais de imagem são estudos gerados. Nenhum representa projeto, ex
 
 Arquivos PNG de origem permanecem em `assets/plates/` e `/workspace/generated_images/`. A conversão para WebP preserva as dimensões e reduz o peso sem introduzir elementos novos. O motor da Impeccable registrou os prompts em sidecars `.webp.json`, por não suportar metadados embutidos nesse formato.
 
-A identidade usa marca tipográfica provisória; não há logotipo oficial fornecido. O favicon é um símbolo tipográfico provisório para navegação.
+A identidade usa o logotipo oficial da UNION3D, recebido em vetor com a documentação de marca. O site aplica a assinatura horizontal azul e escura (`public/marca/union3d-horizontal.svg`) no cabeçalho e no rodapé; a versão branca fica reservada a fundos em tinta. O favicon é o símbolo oficial sobre um quadrado claro, para continuar visível em abas escuras. As dez versões recebidas estão em `docs/marca/`.

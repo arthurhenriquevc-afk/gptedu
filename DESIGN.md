@@ -103,7 +103,7 @@ Mídia com cantos retos. Elementos compactos usam 4px; botões, campos e notas u
 
 ## Components
 
-- Header aderente com marca tipográfica provisória; painel de serviços organizado por público, que fecha com Escape, clique externo ou quando o foco do teclado sai dele. Versão móvel com botão, estado expandido, Escape e links em fluxo.
+- Header aderente com o logotipo oficial (assinatura horizontal azul e escura, 50px de altura, 42px até 900px; 52px no rodapé). Sobre fundos em tinta, só a versão branca: as partes em `#052E40` do símbolo desaparecem sobre `ink`. A documentação de marca não define área de proteção nem tamanho mínimo; painel de serviços organizado por público, que fecha com Escape, clique externo ou quando o foco do teclado sai dele. Versão móvel com botão, estado expandido, Escape e links em fluxo.
 - Botões de ênfase em `ink`, links contextuais sublinhados e setas SVG de traço consistente. Foco visível com contorno de 3px.
 - Diretório com linhas editoriais, busca e filtros por público; estado sem resultados oferece recuperação.
 - Perguntas com `details/summary` nativos. Campos sempre identificados, opcionais marcados e estado de operação explícito. O contorno dos campos e da busca usa `#7c8b90` (3,28:1 sobre `paper`), acima dos 3:1 exigidos para limites de componentes.
