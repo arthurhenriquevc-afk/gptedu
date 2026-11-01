@@ -32,7 +32,7 @@ code,kbd,pre,.ds-mono{font-family:var(--ds-mono);font-size:.86em;font-variant-nu
 
 /* ---------- Barra superior ---------- */
 .ds-bar{position:sticky;top:0;z-index:60;height:var(--ds-bar);display:flex;align-items:center;gap:28px;padding:0 var(--gutter);background:#f7f7f3e6;backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--line)}
-.ds-bar .brand{gap:14px}.ds-bar .wordmark{font-size:24px}.ds-bar .brand-description{display:block;padding-left:14px;font-size:11px;line-height:1.35}
+.ds-bar .brand{gap:14px}.ds-bar .logo{height:34px}.ds-bar .brand-description{display:block;padding-left:14px;font-size:11px;line-height:1.35}
 .ds-bar nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
 .ds-bar nav a{position:relative;display:flex;gap:7px;align-items:baseline;padding:8px 10px;font-size:13px;text-decoration:none;white-space:nowrap;border-radius:4px;color:var(--muted);transition:color 220ms,background 220ms}
 .ds-bar nav a span{font-family:var(--ds-mono);font-size:11px;color:#62747a}
@@ -52,7 +52,7 @@ code,kbd,pre,.ds-mono{font-family:var(--ds-mono);font-size:.86em;font-variant-nu
 .ds-hero-grid{position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(#d8e2e50d 1px,transparent 1px),linear-gradient(90deg,#d8e2e50d 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(70% 70% at 60% 40%,#000 20%,transparent 80%);-webkit-mask-image:radial-gradient(70% 70% at 60% 40%,#000 20%,transparent 80%);animation:ds-drift 60s linear infinite}
 @keyframes ds-drift{to{background-position:64px 64px,64px 64px}}
 .ds-hero-top{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:28px var(--gutter) 0;max-width:var(--ds-max);width:100%;margin:0 auto}
-.ds-hero-top .wordmark{color:var(--paper)}.ds-hero-top .brand-description{color:var(--light-text);border-left-color:var(--ds-rule);display:block}
+.ds-hero-top .logo{height:52px}.ds-hero-top .brand-description{color:var(--light-text);border-left-color:var(--ds-rule);display:block}
 .ds-hero-top small{font-size:12px;color:var(--ds-glow);font-family:var(--ds-mono)}
 .ds-hero-main{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center;flex:1;padding:clamp(40px,6vh,80px) var(--gutter) 40px;max-width:var(--ds-max);width:100%;margin:0 auto}
 .ds-display{margin:0 0 28px;color:var(--paper);font-size:clamp(50px,7.2vw,96px);line-height:.98;letter-spacing:-.04em;font-weight:760;text-wrap:initial}
@@ -260,6 +260,18 @@ html[data-fx=on] .ds-tilt:hover figure::after{opacity:1}
 .ds-sizes{display:flex;gap:28px;align-items:end;margin-top:28px;color:var(--paper)}
 .ds-sizes figure{display:flex;flex-direction:column;align-items:center;gap:8px;font:11px var(--ds-mono);color:var(--ds-glow)}
 
+.ds-brand{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.ds-brand-card{margin:0;display:flex;flex-direction:column;gap:18px;border:1px solid #6e8a9459;border-radius:8px;padding:28px;background:#ffffff06;transition:border-color 300ms,transform 500ms var(--ease)}
+.ds-brand-card.light{background:var(--paper);border-color:var(--paper)}
+.ds-brand-card:hover{transform:translateY(-4px);border-color:var(--ds-glow)}
+.ds-brand-card img{height:64px;width:auto;max-width:100%;align-self:flex-start}
+.ds-brand-card figcaption{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--ds-glow)}
+.ds-brand-card figcaption b{font-weight:500;color:var(--paper);font-size:15px}
+.ds-brand-card.light figcaption{color:var(--muted)}.ds-brand-card.light figcaption b{color:var(--ink)}
+.ds-brand-card.light :not(pre)>code{background:#002e400d;border-color:#002e4014;color:var(--text)}
+.ds-brand-card code{white-space:normal;overflow-wrap:anywhere}
+@media(max-width:900px){.ds-brand{grid-template-columns:1fr}}
+
 /* ---------- Animações ---------- */
 .ds-curve{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:24px}
 .ds-curve-svg{width:100%;height:auto;overflow:visible}
@@ -336,12 +348,12 @@ html[data-fx=off] *,html[data-fx=off] *::before,html[data-fx=off] *::after{anima
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
 <header class="ds-bar">
- <a class="brand" href="#topo" aria-label="UNION3D, design system, início"><span class="wordmark">UNION3D</span><span class="brand-description">Design<br/>system</span></a>
+ <a class="brand" href="#topo" aria-label="UNION3D, design system, início"><img class="logo" src="public/marca/union3d-horizontal.svg" width="255" height="78" alt="UNION3D"/><span class="brand-description">Design<br/>system</span></a>
  <nav aria-label="Seções do design system">
   <a href="#tipografia"><span>02</span><b>Tipografia</b></a>
   <a href="#cores"><span>03</span><b>Cores</b></a>
   <a href="#componentes"><span>04</span><b>Componentes</b></a>
-  <a href="#icones"><span>05</span><b>Ícones</b></a>
+  <a href="#icones"><span>05</span><b>Marca e ícones</b></a>
   <a href="#animacoes"><span>06</span><b>Animações</b></a>
  </nav>
  <button class="ds-fxtoggle" type="button" aria-pressed="true" data-ds-fx><i aria-hidden="true"></i><span>Efeitos</span></button>
@@ -357,7 +369,7 @@ html[data-fx=off] *,html[data-fx=off] *::before,html[data-fx=off] *::after{anima
  <canvas class="ds-cloud" aria-hidden="true" data-ds-cloud></canvas>
 
  <div class="ds-hero-top">
-  <span class="brand"><span class="wordmark">UNION3D</span><span class="brand-description">Reality capture<br/>para a construção</span></span>
+  <span class="brand"><img class="logo" src="public/marca/union3d-horizontal-branca.svg" width="255" height="78" alt="UNION3D"/><span class="brand-description">Reality capture<br/>para a construção</span></span>
   <small>v1 · Astro 7.4.4 · global.css · site.ts</small>
  </div>
 
@@ -450,7 +462,7 @@ html[data-fx=off] *,html[data-fx=off] *::before,html[data-fx=off] *::after{anima
     <tr><td><span class="ds-sample" style="font-size:14px;color:var(--muted)">Os demais campos são opcionais.</span><small>helper text</small></td><td><code>.form-requirements</code>, <code>.filter-result</code></td><td>400</td><td>14px</td><td>1.6</td><td>normal</td><td>none</td></tr>
     <tr><td><span class="ds-sample" style="font-size:15px;font-weight:700;letter-spacing:.02em;text-transform:uppercase">Fundações</span><small>rótulo de etapa</small></td><td><code>.stage-button strong</code></td><td>700</td><td>15px<small>13px até 1200</small></td><td>1.6</td><td>0.02em</td><td>uppercase</td></tr>
     <tr><td><span class="ds-sample" style="font-size:11px;letter-spacing:.18em;line-height:1.5;text-transform:uppercase">Reality capture para a construção</span><small>descrição da marca</small></td><td><code>.brand-description</code></td><td>400</td><td>11px</td><td>1.5</td><td>0.18em</td><td>uppercase</td></tr>
-    <tr><td><span class="ds-sample" style="font-size:36px;font-weight:850;letter-spacing:-.06em;line-height:1">UNION3D</span><small>marca tipográfica</small></td><td><code>.wordmark</code></td><td>850</td><td>36px<small>32px até 900</small></td><td>1</td><td>-0.06em</td><td>none</td></tr>
+    <tr><td><img src="public/marca/union3d-horizontal.svg" width="255" height="78" alt="UNION3D" style="height:44px;width:auto;display:block"/><small>logotipo oficial</small></td><td><code>.logo</code>, <code>.footer-logo img</code></td><td>vetor</td><td>altura 50px<small>42px até 900 · 52px no rodapé</small></td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
     <tr><td><span class="ds-sample" style="font-size:16px;font-weight:500;line-height:1.4">Solicitar orçamento</span><small>texto de botão</small></td><td><code>.button</code>, <code>.button-small</code></td><td>500</td><td>16px<small>14px no pequeno</small></td><td>1.4</td><td>normal</td><td>none</td></tr>
    </table>
   </div>
@@ -484,6 +496,15 @@ html[data-fx=off] *,html[data-fx=off] *::before,html[data-fx=off] *::after{anima
    <button type="button" class="ds-swatch ds-reveal" style="--c:#edf0f0;--d:7" data-copy="#edf0f0"><span class="ds-chip"><em>fundo</em></span><span class="ds-swatch-body"><strong>Hero ground</strong><code>#edf0f0 · rgb(237,240,240) · hsl(180,9%,94%)</code><span class="ds-role">Fundo do hero enquanto as imagens carregam.</span></span></button>
    <button type="button" class="ds-swatch ds-reveal" style="--c:#667c82;--on:#f7f7f3;--d:8" data-copy="#667c82"><span class="ds-chip"><em>barra</em></span><span class="ds-swatch-body"><strong>Scrollbar</strong><code>#667c82 · rgb(102,124,130) · hsl(193,12%,45%)</code><span class="ds-role">Polegar da barra de rolagem (<code>scrollbar-color</code>).</span></span></button>
   </div>
+
+  <div class="ds-sub ds-reveal"><h3>Cores da marca</h3><p>Declaradas na documentação de marca. O azul profundo é o próprio <code>--ink</code>. Os outros dois aparecem só dentro do logotipo; a interface não os usa.</p></div>
+  <div class="ds-swatches">
+   <button type="button" class="ds-swatch ds-reveal" style="--c:#002e40" data-copy="#002E40"><span class="ds-chip"><em>= --ink</em></span><span class="ds-swatch-body"><strong>Azul profundo</strong><code>#002E40 · rgb(0,46,64) · hsl(197,100%,13%)</code><code>CMYK 97, 72, 50, 52</code><span class="ds-role">Primária da marca e da interface.</span></span></button>
+   <button type="button" class="ds-swatch ds-reveal" style="--c:#074f61;--d:1" data-copy="#074F61"><span class="ds-chip"><em>logotipo</em></span><span class="ds-swatch-body"><strong>Azul médio</strong><code>#074F61 · rgb(7,79,97) · hsl(192,87%,20%)</code><code>CMYK 94, 59, 46, 28</code><span class="ds-role">Face lateral do símbolo. No vetor: <code>#084F61</code>.</span></span></button>
+   <button type="button" class="ds-swatch ds-reveal" style="--c:#026883;--d:2" data-copy="#026883"><span class="ds-chip"><em>logotipo</em></span><span class="ds-swatch-body"><strong>Azul claro</strong><code>#026883 · rgb(2,104,131) · hsl(193,97%,26%)</code><code>CMYK 91, 50, 35, 11</code><span class="ds-role">Base do símbolo. No vetor: <code>#0D6883</code>.</span></span></button>
+   <button type="button" class="ds-swatch ds-reveal" style="--c:#231f20;--d:3" data-copy="#231F20"><span class="ds-chip"><em>logotipo</em></span><span class="ds-swatch-body"><strong>Escuro do texto</strong><code>#231F20 · rgb(35,31,32) · hsl(345,6%,13%)</code><span class="ds-role">Letras “UNION3D” das versões azul e escura e escura.</span></span></button>
+  </div>
+  <p class="ds-note ds-reveal">Os valores declarados e os preenchimentos dos vetores diferem por poucos pontos de RGB (por exemplo, #026883 e #0D6883). Os arquivos foram mantidos como vieram.</p>
 
   <div class="ds-sub ds-reveal"><h3>Variantes de opacidade</h3><p>O site usa uma única transparência: tinta a 8% (<code>#002e4014</code>) na sombra do menu de serviços. As demais etapas abaixo são a régua disponível para novos usos.</p></div>
   <div class="ds-grid2">
@@ -698,7 +719,7 @@ html[data-fx=off] *,html[data-fx=off] *::before,html[data-fx=off] *::after{anima
    <div class="ds-frame ds-header-frame ds-reveal">
     <div class="ds-browser" aria-hidden="true"><i></i><i></i><i></i><span>union3d / página inicial</span></div>
     <header class="site-header">
-     <a class="brand" href="#c-nav" aria-label="UNION3D, página inicial"><span class="wordmark">UNION3D</span><span class="brand-description">Reality capture<br/>para a construção</span></a>
+     <a class="brand" href="#c-nav" aria-label="UNION3D, página inicial"><img class="logo" src="public/marca/union3d-horizontal.svg" width="255" height="78" alt="UNION3D"/><span class="brand-description">Reality capture<br/>para a construção</span></a>
      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav"><span>Menu</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 8h18M3 16h18" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
      <nav id="main-nav" class="main-nav" aria-label="Navegação principal (exemplo)">
       <details class="services-menu"><summary>Serviços<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary><div class="mega-menu"><div><a class="menu-category" href="#c-nav">Para empresas <svg class="arrow" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a><a href="#c-nav">Conferência de topografia</a><a href="#c-nav">Mapeamento aéreo com drone</a><a href="#c-nav">Locação de estacas</a><a href="#c-nav">Locação de linhas de eixo</a><a href="#c-nav">Conferência de excentricidade das estacas</a><a href="#c-nav">As-built de laje protendida</a><a href="#c-nav">As-built e infraestrutura MEP</a><a href="#c-nav">Escaneamento de fachada para retrofit</a></div><div><a class="menu-category" href="#c-nav">Para profissionais <svg class="arrow" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a><a href="#c-nav">Levantamento arquitetônico de interiores</a><a href="#c-nav">Tour virtual decorado</a><a class="menu-all" href="#c-nav">Explorar todos os serviços <svg class="arrow" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></a></div></div></details>
@@ -714,7 +735,7 @@ html[data-fx=off] *,html[data-fx=off] *::before,html[data-fx=off] *::after{anima
     </div>
    </div>
    <div class="ds-frame ds-reveal" style="margin-top:16px">
-    <footer class="site-footer"><div class="footer-top"><div><a class="wordmark" href="#c-nav">UNION3D</a><p>Captura da realidade e informação técnica para projetos e obras.</p><span>Atuação em Santa Catarina</span></div><div><h2>Explorar</h2><a href="#c-nav">Serviços</a><a href="#c-nav">Sobre a UNION3D</a><a href="#c-nav">Aplicações</a><a href="#c-nav">Contato e orçamento</a></div><div><h2>Para empresas</h2><a href="#c-nav">Conferência de topografia</a><a href="#c-nav">Mapeamento aéreo com drone</a><a href="#c-nav">Locação de estacas</a><a href="#c-nav">Locação de linhas de eixo</a><a href="#c-nav">Conferência de excentricidade das estacas</a><a href="#c-nav">As-built de laje protendida</a><a href="#c-nav">As-built e infraestrutura MEP</a><a href="#c-nav">Escaneamento de fachada para retrofit</a></div><div><h2>Para profissionais</h2><a href="#c-nav">Levantamento arquitetônico de interiores</a><a href="#c-nav">Tour virtual decorado</a></div></div><div class="footer-bottom"><span>© <span data-ds-year>2026</span> UNION3D</span><span>Espaço físico. Informação útil.</span><a href="#c-nav">Privacidade</a></div></footer>
+    <footer class="site-footer"><div class="footer-top"><div><a class="footer-logo" href="#c-nav"><img src="public/marca/union3d-horizontal.svg" width="255" height="78" alt="UNION3D, página inicial" loading="lazy"/></a><p>Captura da realidade e informação técnica para projetos e obras.</p><span>Atuação em Santa Catarina</span></div><div><h2>Explorar</h2><a href="#c-nav">Serviços</a><a href="#c-nav">Sobre a UNION3D</a><a href="#c-nav">Aplicações</a><a href="#c-nav">Contato e orçamento</a></div><div><h2>Para empresas</h2><a href="#c-nav">Conferência de topografia</a><a href="#c-nav">Mapeamento aéreo com drone</a><a href="#c-nav">Locação de estacas</a><a href="#c-nav">Locação de linhas de eixo</a><a href="#c-nav">Conferência de excentricidade das estacas</a><a href="#c-nav">As-built de laje protendida</a><a href="#c-nav">As-built e infraestrutura MEP</a><a href="#c-nav">Escaneamento de fachada para retrofit</a></div><div><h2>Para profissionais</h2><a href="#c-nav">Levantamento arquitetônico de interiores</a><a href="#c-nav">Tour virtual decorado</a></div></div><div class="footer-bottom"><span>© <span data-ds-year>2026</span> UNION3D</span><span>Espaço físico. Informação útil.</span><a href="#c-nav">Privacidade</a></div></footer>
    </div>
   </article>
 
@@ -789,19 +810,36 @@ html[data-fx=off] *,html[data-fx=off] *::before,html[data-fx=off] *::after{anima
 <!-- ===================== 05 ÍCONES ===================== -->
 <section class="ds-section ds-dark" id="icones" aria-labelledby="t-icones">
  <div class="ds-wrap">
-  <header class="ds-head ds-reveal"><span class="ds-index">05</span><div><h2 id="t-icones">Ícones</h2><p>Não há biblioteca de ícones. São quatro desenhos próprios em SVG, com traço fino em <code>currentColor</code>, sem preenchimento e com <code>aria-hidden="true"</code>: o texto ao lado sempre nomeia a ação.</p></div></header>
+  <header class="ds-head ds-reveal"><span class="ds-index">05</span><div><h2 id="t-icones">Marca e ícones</h2><p>Não há biblioteca de ícones. São quatro desenhos próprios em SVG, com traço fino em <code>currentColor</code>, sem preenchimento e com <code>aria-hidden="true"</code>: o texto ao lado sempre nomeia a ação.</p></div></header>
   <div class="ds-icons">
    <div class="ds-icon ds-reveal" data-ds-glow><div class="ds-icon-art"><svg class="arrow" viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></div><strong>Seta</strong><dl><dt>Arquivo</dt><dd>Arrow.astro</dd><dt>Classe</dt><dd>.arrow</dd><dt>Caixa</dt><dd>24 · exibida 22px</dd><dt>Traço</dt><dd>1.4</dd><dt>Movimento</dt><dd>+4px, 240ms</dd></dl></div>
    <div class="ds-icon ds-reveal" style="--d:1" data-ds-glow><div class="ds-icon-art"><svg viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path d="M3 8h18M3 16h18" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div><strong>Menu</strong><dl><dt>Arquivo</dt><dd>Header.astro</dd><dt>Classe</dt><dd>.menu-toggle svg</dd><dt>Caixa</dt><dd>24 · exibida 24px</dd><dt>Traço</dt><dd>1.5</dd><dt>Uso</dt><dd>até 900px</dd></dl></div>
    <div class="ds-icon ds-reveal" style="--d:2" data-ds-glow><div class="ds-icon-art"><svg viewBox="0 0 16 16" width="40" height="40" fill="none" stroke="currentColor" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></div><strong>Chevron</strong><dl><dt>Arquivo</dt><dd>Header.astro</dd><dt>Classe</dt><dd>.services-menu summary svg</dd><dt>Caixa</dt><dd>16 · exibida 14px</dd><dt>Traço</dt><dd>1</dd><dt>Uso</dt><dd>menu de serviços</dd></dl></div>
    <button class="ds-icon ds-reveal" style="--d:3;text-align:left;color:inherit;font:inherit" type="button" data-ds-glow data-ds-faqsign aria-pressed="false"><span class="ds-icon-art"><span class="faq-sign" style="transform:scale(2.6)" aria-hidden="true"></span></span><strong>Sinal da FAQ</strong><dl><dt>Arquivo</dt><dd>FAQ.astro</dd><dt>Classe</dt><dd>.faq-sign</dd><dt>Desenho</dt><dd>CSS, 2 linhas de 14×1px</dd><dt>Movimento</dt><dd>gira 90°, 180ms</dd><dt>Teste</dt><dd>clique aqui</dd></dl></button>
-   <div class="ds-icon ds-reveal" style="--d:4" data-ds-glow><div class="ds-icon-art"><img style="border-radius:8px;box-shadow:0 0 0 1px #6e8a94" src="public/favicon.svg" width="56" height="56" alt="Ícone da UNION3D: um U duplo claro sobre quadrado azul petróleo."/></div><strong>Favicon</strong><dl><dt>Arquivo</dt><dd>public/favicon.svg</dd><dt>Caixa</dt><dd>64, raio 8</dd><dt>Cores</dt><dd>#002E40 · #f7f7f3</dd><dt>theme-color</dt><dd>#002E40</dd></dl></div>
+   <div class="ds-icon ds-reveal" style="--d:4" data-ds-glow><div class="ds-icon-art"><img src="public/favicon.svg" width="56" height="56" alt="Favicon da UNION3D: símbolo oficial sobre quadrado claro."/></div><strong>Favicon</strong><dl><dt>Arquivo</dt><dd>public/favicon.svg</dd><dt>Caixa</dt><dd>64, raio 12</dd><dt>Desenho</dt><dd>símbolo oficial</dd><dt>Fundo</dt><dd>#f7f7f3</dd><dt>theme-color</dt><dd>#002E40</dd></dl></div>
   </div>
   <div class="ds-sizes ds-reveal" aria-label="Tamanhos da seta">
    <figure><svg class="arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>14</figure>
    <figure><svg class="arrow" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>22 · padrão</figure>
    <figure><svg class="arrow" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>32</figure>
    <figure><svg class="arrow" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg>48</figure>
+  </div>
+  <div class="ds-sub ds-reveal"><h3>Logotipo oficial</h3><p>Arquivos vetoriais da documentação de marca da UNION3D, sem alteração de desenho. O site usa a assinatura horizontal azul e escura sobre fundos claros; esta página usa a branca sobre tinta.</p></div>
+  <div class="ds-brand">
+   <figure class="ds-brand-card light ds-reveal"><img src="public/marca/union3d-horizontal.svg" width="255" height="78" alt="Assinatura horizontal azul e escura da UNION3D"/><figcaption><b>Horizontal azul e escura</b><code>public/marca/union3d-horizontal.svg</code><span>Cabeçalho (50px, 42px até 900) e rodapé (52px)</span></figcaption></figure>
+   <figure class="ds-brand-card ds-reveal" style="--d:1"><img src="public/marca/union3d-horizontal-branca.svg" width="255" height="78" alt="Assinatura horizontal branca da UNION3D"/><figcaption><b>Horizontal branca</b><code>public/marca/union3d-horizontal-branca.svg</code><span>Sobre <code>--ink</code>; nesta página, primeira dobra</span></figcaption></figure>
+   <figure class="ds-brand-card light ds-reveal" style="--d:2"><img src="public/marca/union3d-simbolo.svg" width="118" height="134" alt="Símbolo colorido da UNION3D"/><figcaption><b>Símbolo</b><code>public/marca/union3d-simbolo.svg</code><span>Base do favicon</span></figcaption></figure>
+  </div>
+  <div class="ds-panel ds-scroll ds-reveal" style="margin-top:24px">
+   <table class="ds-spec">
+    <tr><th>Item</th><th>Valor</th><th>Fonte</th></tr>
+    <tr><td>Proporção horizontal</td><td>3.26 : 1 (255 × 78)</td><td>documentação de marca</td></tr>
+    <tr><td>Proporção vertical</td><td>1.25 : 1</td><td>documentação de marca</td></tr>
+    <tr><td>Tipografia do logotipo</td><td>Century Gothic Bold, já convertida em curvas; não é carregada pelo site</td><td>documentação de marca</td></tr>
+    <tr><td>Versões disponíveis</td><td>10: horizontal e vertical em azul e branco, branca, azul e escura e escura; logotipo com descritor “Serviços para engenharia”; símbolo isolado</td><td><code>docs/marca/</code></td></tr>
+    <tr><td>Área de proteção, tamanho mínimo, fundos permitidos</td><td>não informados pela documentação de marca</td><td><span class="ds-tag warn">pendente</span></td></tr>
+    <tr><td>Fundo escuro</td><td>usar só a versão branca: as partes em <code>#052E40</code> do símbolo somem sobre <code>--ink</code></td><td>conferido nesta página</td></tr>
+   </table>
   </div>
   <p class="ds-note ds-reveal">O ícone de fechar do modal de exemplo segue a mesma regra (caixa 24, traço 1.4) e é proposta desta página.</p>
  </div>

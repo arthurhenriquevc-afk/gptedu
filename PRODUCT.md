@@ -36,7 +36,7 @@ UNION3D. Voz técnica, clara, sóbria e consultiva. Direção arquitetônica e e
 
 ## Evidence on Hand
 
-Briefing fornecido pelo usuário e arquitetura em docs/arquitetura.md. Não foram fornecidos logotipo vetorial, fotografias de trabalhos, nuvens de pontos, contatos, casos autorizados, depoimentos ou dados legais. Estudos visuais com imagens geradas devem ser identificados como conceituais; nunca atribuídos à empresa como evidência.
+Briefing fornecido pelo usuário e arquitetura em docs/arquitetura.md. O logotipo oficial em vetor foi fornecido (documentação de marca, arquivos em `docs/marca/`), sem regras de área de proteção, tamanho mínimo ou fundos permitidos. Não foram fornecidos fotografias de trabalhos, nuvens de pontos, contatos, casos autorizados, depoimentos ou dados legais. Estudos visuais com imagens geradas devem ser identificados como conceituais; nunca atribuídos à empresa como evidência.
 
 ## Product Principles
 
