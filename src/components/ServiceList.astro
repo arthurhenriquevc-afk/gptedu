@@ -1,0 +1,7 @@
+---
+import Arrow from './Arrow.astro';
+import { audienceLabel, type Service } from '../data/services';
+interface Props { items: Service[]; compact?: boolean; }
+const {items,compact=false} = Astro.props;
+---
+<div class:list={['service-list',{'service-list-compact':compact}]}>{items.map((s)=><a class="service-row" href={`/servicos/${s.slug}/`} data-service-row data-audience={s.audience} data-search={`${s.name} ${s.summary}`.toLocaleLowerCase('pt-BR')}><span class="service-audience">{audienceLabel(s.audience)}</span><div><h3>{s.name}</h3>{!compact&&<p>{s.summary}</p>}</div><Arrow/></a>)}</div>

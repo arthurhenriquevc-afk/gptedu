@@ -1,0 +1,4 @@
+---
+import { services } from '../data/services';
+---
+<footer class="site-footer"><div class="footer-top"><div><a class="wordmark" href="/">UNION3D</a><p>Captura da realidade e informação técnica para projetos e obras.</p><span>Atuação em Santa Catarina</span></div><div><h2>Explorar</h2><a href="/servicos/">Serviços</a><a href="/sobre/">Sobre a UNION3D</a><a href="/aplicacoes/">Aplicações</a><a href="/contato/">Contato e orçamento</a></div><div><h2>Para empresas</h2>{services.filter(s=>s.audience==='empresas').map(s=><a href={`/servicos/${s.slug}/`}>{s.name}</a>)}</div><div><h2>Para profissionais</h2>{services.filter(s=>s.audience==='profissionais').map(s=><a href={`/servicos/${s.slug}/`}>{s.name}</a>)}</div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} UNION3D</span><span>Espaço físico. Informação útil.</span><a href="/privacidade/">Privacidade</a></div></footer>

@@ -1,0 +1,9 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '@fontsource-variable/archivo';
+import '../styles/global.css';
+interface Props { title?: string; description?: string; noindex?: boolean; }
+const {title='Captura da realidade para projetos e obras',description='Escaneamento a laser 3D, levantamentos, documentação e conferências para construção civil e arquitetura em Santa Catarina.',noindex=false} = Astro.props;
+---
+<!doctype html><html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#002E40"/><meta name="description" content={description}/><title>{title} | UNION3D</title>{noindex&&<meta name="robots" content="noindex,nofollow"/>}<link rel="icon" type="image/svg+xml" href="/favicon.svg"/></head><body><a class="skip-link" href="#conteudo">Pular para o conteúdo</a><Header/><noscript><style is:inline>.menu-toggle{display:none}.main-nav{display:flex;position:static;max-height:none;flex-wrap:wrap}.site-header{flex-wrap:wrap}.main-nav .mega-menu{position:static}.window-detail[hidden]{display:grid!important}.stage-controls{display:none}@media(max-width:600px){.window-detail[hidden]{display:block!important}}</style></noscript><main id="conteudo"><slot/></main><Footer/><script>import '../scripts/site';</script></body></html>

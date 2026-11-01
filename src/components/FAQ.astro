@@ -1,0 +1,5 @@
+---
+interface Props { items: [string,string][]; title?: string; }
+const {items,title='Antes da primeira conversa.'}=Astro.props;
+---
+<section class="faq section"><h2>{title}</h2><div class="faq-list">{items.map(([q,a])=><details><summary>{q}<span class="faq-sign" aria-hidden="true"></span></summary><div><p>{a}</p></div></details>)}</div></section>

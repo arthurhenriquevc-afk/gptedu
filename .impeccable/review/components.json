@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 3,
+  "stage": "components",
+  "id": "components",
+  "title": "Plan and asset review · src/pages/index.astro",
+  "comp": {
+    "path": ".impeccable/mocks/c-registro-em-corte.png",
+    "width": 1536,
+    "height": 1024
+  },
+  "specSha256": "98591bec3734d914a904d096f0d1d5167ad64186726a4fe00e6b90c5c7563f1a",
+  "components": [
+    {
+      "id": "hero-panorama",
+      "name": "Hero panorama",
+      "kind": "image",
+      "role": "asset",
+      "box": {
+        "x": 0,
+        "y": 0.2383,
+        "w": 1,
+        "h": 0.3848
+      },
+      "note": "Conceptual unfinished concrete building panorama transitioning to point cloud at right, coastal distant city and sky. No UI text in the artwork.",
+      "medium": "raster",
+      "preview": {
+        "kind": "image",
+        "path": "assets/plates/hero-panorama.png"
+      },
+      "dependencies": []
+    },
+    {
+      "id": "construction-section",
+      "name": "Construction section",
+      "kind": "plate",
+      "role": "asset",
+      "box": {
+        "x": 0.0286,
+        "y": 0.7236,
+        "w": 0.9466,
+        "h": 0.2324
+      },
+      "note": "Wide conceptual cutaway illustration of one concrete building showing foundations, structure, visible service installations and geometric recorded condition, including thin vertical annotation leaders but no labels. Off-white background.",
+      "medium": "raster",
+      "preview": {
+        "kind": "image",
+        "path": "assets/plates/construction-section.png"
+      },
+      "dependencies": []
+    }
+  ],
+  "codeRegions": [
+    {
+      "id": "wordmark",
+      "name": "Wordmark",
+      "kind": "text",
+      "box": {
+        "x": 0.0378,
+        "y": 0.0166,
+        "w": 0.1217,
+        "h": 0.0342
+      },
+      "note": "Provisional UNION3D typeset wordmark, deep blue sans serif"
+    },
+    {
+      "id": "nav-services",
+      "name": "Nav services",
+      "kind": "control",
+      "box": {
+        "x": 0.5892,
+        "y": 0.0234,
+        "w": 0.0371,
+        "h": 0.0234
+      },
+      "note": "Navigation link text in deep blue on off-white background"
+    },
+    {
+      "id": "nav-about",
+      "name": "Nav about",
+      "kind": "control",
+      "box": {
+        "x": 0.6536,
+        "y": 0.0234,
+        "w": 0.0293,
+        "h": 0.0234
+      },
+      "note": "Navigation link text in deep blue on off-white background"
+    },
+    {
+      "id": "nav-applications",
+      "name": "Nav applications",
+      "kind": "control",
+      "box": {
+        "x": 0.7038,
+        "y": 0.0234,
+        "w": 0.0482,
+        "h": 0.0234
+      },
+      "note": "Navigation link text in deep blue on off-white background"
+    },
+    {
+      "id": "nav-contact",
+      "name": "Nav contact",
+      "kind": "control",
+      "box": {
+        "x": 0.776,
+        "y": 0.0234,
+        "w": 0.0371,
+        "h": 0.0234
+      },
+      "note": "Navigation link text in deep blue on off-white background"
+    },
+    {
+      "id": "header-action",
+      "name": "Header action",
+      "kind": "control",
+      "box": {
+        "x": 0.8366,
+        "y": 0.0117,
+        "w": 0.1243,
+        "h": 0.043
+      },
+      "note": "Deep blue rectangular Solicitar orçamento action with white label and arrow"
+    },
+    {
+      "id": "headline",
+      "name": "Headline",
+      "kind": "text",
+      "box": {
+        "x": 0.0378,
+        "y": 0.1055,
+        "w": 0.9232,
+        "h": 0.0713
+      },
+      "note": "Antes de decidir, registre o que existe. Heavy sans serif single line heading in deep blue"
+    },
+    {
+      "id": "description",
+      "name": "Description",
+      "kind": "text",
+      "box": {
+        "x": 0.0378,
+        "y": 0.1943,
+        "w": 0.6198,
+        "h": 0.0273
+      },
+      "note": "Single line of supporting body text in regular deep blue sans serif"
+    },
+    {
+      "id": "hero-primary",
+      "name": "Hero primary",
+      "kind": "control",
+      "box": {
+        "x": 0.0391,
+        "y": 0.2354,
+        "w": 0.1543,
+        "h": 0.0488
+      },
+      "note": "Deep blue filled Solicitar orçamento button with white text and arrow"
+    },
+    {
+      "id": "hero-secondary",
+      "name": "Hero secondary",
+      "kind": "control",
+      "box": {
+        "x": 0.2064,
+        "y": 0.2354,
+        "w": 0.125,
+        "h": 0.0488
+      },
+      "note": "Off-white outlined Explorar serviços button with deep blue text"
+    },
+    {
+      "id": "conceptual-caption",
+      "name": "Conceptual caption",
+      "kind": "text",
+      "box": {
+        "x": 0.7702,
+        "y": 0.6006,
+        "w": 0.2051,
+        "h": 0.0166
+      },
+      "note": "Small off-white caption Estudo visual conceitual — não representa obra da UNION3D over deep blue image"
+    },
+    {
+      "id": "windows-heading",
+      "name": "Windows heading",
+      "kind": "text",
+      "box": {
+        "x": 0.0378,
+        "y": 0.6357,
+        "w": 0.4824,
+        "h": 0.0469
+      },
+      "note": "A obra avança. O acesso muda. Bold deep blue sans serif heading"
+    },
+    {
+      "id": "windows-intro",
+      "name": "Windows intro",
+      "kind": "text",
+      "box": {
+        "x": 0.0384,
+        "y": 0.6953,
+        "w": 0.6029,
+        "h": 0.0225
+      },
+      "note": "Antes de recobrir ou alterar, registre as condições acessíveis ao levantamento. Regular deep blue text"
+    },
+    {
+      "id": "stage-1-number",
+      "name": "Stage 1 number",
+      "kind": "text",
+      "box": {
+        "x": 0.1217,
+        "y": 0.7236,
+        "w": 0.0163,
+        "h": 0.0146
+      },
+      "note": "Small sequence number 01"
+    },
+    {
+      "id": "stage-1-title",
+      "name": "Stage 1 title",
+      "kind": "text",
+      "box": {
+        "x": 0.1217,
+        "y": 0.7422,
+        "w": 0.0814,
+        "h": 0.0176
+      },
+      "note": "Bold stage label Fundações"
+    },
+    {
+      "id": "stage-1-description",
+      "name": "Stage 1 description",
+      "kind": "text",
+      "box": {
+        "x": 0.1217,
+        "y": 0.7607,
+        "w": 0.0814,
+        "h": 0.0166
+      },
+      "note": "Short stage timing Antes da execução"
+    },
+    {
+      "id": "stage-2-number",
+      "name": "Stage 2 number",
+      "kind": "text",
+      "box": {
+        "x": 0.3464,
+        "y": 0.7236,
+        "w": 0.0163,
+        "h": 0.0146
+      },
+      "note": "Small sequence number 02"
+    },
+    {
+      "id": "stage-2-title",
+      "name": "Stage 2 title",
+      "kind": "text",
+      "box": {
+        "x": 0.3464,
+        "y": 0.7422,
+        "w": 0.1185,
+        "h": 0.0176
+      },
+      "note": "Bold stage label Estrutura"
+    },
+    {
+      "id": "stage-2-description",
+      "name": "Stage 2 description",
+      "kind": "text",
+      "box": {
+        "x": 0.3464,
+        "y": 0.7607,
+        "w": 0.1185,
+        "h": 0.0166
+      },
+      "note": "Short stage timing Com referências acessíveis"
+    },
+    {
+      "id": "stage-3-number",
+      "name": "Stage 3 number",
+      "kind": "text",
+      "box": {
+        "x": 0.5827,
+        "y": 0.7236,
+        "w": 0.0163,
+        "h": 0.0146
+      },
+      "note": "Small sequence number 03"
+    },
+    {
+      "id": "stage-3-title",
+      "name": "Stage 3 title",
+      "kind": "text",
+      "box": {
+        "x": 0.5827,
+        "y": 0.7422,
+        "w": 0.112,
+        "h": 0.0176
+      },
+      "note": "Bold stage label Instalações"
+    },
+    {
+      "id": "stage-3-description",
+      "name": "Stage 3 description",
+      "kind": "text",
+      "box": {
+        "x": 0.5827,
+        "y": 0.7607,
+        "w": 0.112,
+        "h": 0.0166
+      },
+      "note": "Short stage timing Antes dos fechamentos"
+    },
+    {
+      "id": "stage-4-number",
+      "name": "Stage 4 number",
+      "kind": "text",
+      "box": {
+        "x": 0.832,
+        "y": 0.7236,
+        "w": 0.0163,
+        "h": 0.0146
+      },
+      "note": "Small sequence number 04"
+    },
+    {
+      "id": "stage-4-title",
+      "name": "Stage 4 title",
+      "kind": "text",
+      "box": {
+        "x": 0.832,
+        "y": 0.7422,
+        "w": 0.0911,
+        "h": 0.0176
+      },
+      "note": "Bold stage label Intervenção"
+    },
+    {
+      "id": "stage-4-description",
+      "name": "Stage 4 description",
+      "kind": "text",
+      "box": {
+        "x": 0.832,
+        "y": 0.7607,
+        "w": 0.0911,
+        "h": 0.0166
+      },
+      "note": "Short stage timing Antes da alteração"
+    }
+  ]
+}

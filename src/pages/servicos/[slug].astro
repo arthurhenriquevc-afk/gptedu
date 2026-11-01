@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Arrow from '../../components/Arrow.astro';
+import FAQ from '../../components/FAQ.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import ServiceList from '../../components/ServiceList.astro';
+import { services, audienceLabel, type Service } from '../../data/services';
+export function getStaticPaths(){return services.map(service=>({params:{slug:service.slug},props:{service}}));}
+interface Props { service: Service; }
+const {service:s}=Astro.props;
+const related=services.filter(item=>s.related.includes(item.slug));
+const ctaTitles: Record<string,string> = {'conferencia-de-topografia':'Quais referências você precisa conferir?','mapeamento-aereo-com-drone':'Qual área precisa de uma leitura aérea?','locacao-de-estacas':'Prepare as referências para a etapa de fundações.','locacao-de-linhas-de-eixo':'Defina as referências da próxima execução.','conferencia-de-excentricidade':'Vamos alinhar a conferência dos elementos executados?','as-built-de-laje-protendida':'O que precisa ficar documentado da laje?','as-built-mep':'Planeje o registro antes dos fechamentos.','escaneamento-de-fachada':'Comece o retrofit pela condição existente.','levantamento-de-interiores':'Conte o que você vai projetar neste espaço.','tour-virtual-decorado':'Como você precisa apresentar o ambiente?'};
+const image=s.image==='interior'?'/images/interior.webp':'/images/hero-scan.webp';
+---
+<Layout title={s.name} description={s.summary}>
+<section class="page-opening section"><nav class="breadcrumb" aria-label="Caminho da página"><a href="/">Início</a><span aria-hidden="true">/</span><a href="/servicos/">Serviços</a><span aria-hidden="true">/</span><a href={`/servicos/${s.audience}/`}>{audienceLabel(s.audience)}</a><span aria-hidden="true">/</span><span aria-current="page">{s.name}</span></nav><h1>{s.headline}</h1><h2 class="service-title">{s.name}</h2><p>{s.summary}</p><div class="actions"><a class="button" href={`/contato/?servico=${s.slug}`}>Conversar sobre este serviço <Arrow/></a><a class="text-link" href="#entregaveis">Entender os entregáveis</a></div></section>
+<figure class="wide-image"><img src={image} width={s.image==='interior'?1536:2143} height={s.image==='interior'?1024:734} alt={s.image==='interior'?'Estudo conceitual de ambiente interior.':'Estudo conceitual de estrutura e representação geométrica.'} fetchpriority="high"/><figcaption>Imagem conceitual de contexto. Não representa execução, resultado técnico ou projeto da UNION3D.</figcaption></figure>
+<div class="service-content section"><aside aria-label="Nesta página"><h2>Neste serviço</h2><a href="#finalidade">Finalidade</a><a href="#quando">Quando contratar</a><a href="#execucao">Execução</a><a href="#entregaveis">Entregáveis</a><a href="#solicitacao">O que informar</a><a href="#duvidas">Dúvidas</a></aside><div>
+<section class="content-section" id="finalidade"><h2>O que este serviço faz.</h2><p>{s.purpose}</p></section>
+<section class="content-section" id="quando"><h2>Quando faz sentido contratar.</h2><p>{s.timing}</p><ul>{s.situations.map(item=><li>{item}</li>)}</ul><a class="text-link" href="/#janelas">Relacionar à etapa da obra <Arrow/></a></section>
+<section class="content-section" id="execucao"><h2>Da necessidade ao registro.</h2><p>O planejamento começa pela finalidade e pelas informações disponíveis. A execução específica é alinhada antes da contratação.</p><ol class="execution-list">{s.process.map(([title,text])=><li><strong>{title}</strong><span>{text}</span></li>)}</ol></section>
+<section class="content-section" id="entregaveis"><h2>Entregáveis definidos pelo uso.</h2><p>As possibilidades abaixo precisam ser confirmadas no escopo. Não representam um pacote de entrega já contratado ou um conjunto obrigatório.</p><ul>{s.deliverables.map(item=><li>{item}</li>)}</ul><p class="scope-note"><strong>Limites e pontos a alinhar</strong>{s.limitation}</p></section>
+<section class="content-section"><h2>Informação que corresponde à finalidade.</h2><p>{s.benefit}</p><p>Objeto, método, cobertura e comunicação da entrega precisam ser coerentes entre si. As condições e limitações encontradas fazem parte desse alinhamento.</p></section>
+<section class="content-section" id="solicitacao"><h2>O que ajuda a começar.</h2><p>{s.prepare}</p><p>Localização, área aproximada e prazo desejado ajudam a contextualizar a solicitação. Não é necessário reunir todos os dados para iniciar a conversa.</p><a class="text-link" href={`/contato/?servico=${s.slug}`}>Preparar uma solicitação <Arrow/></a></section>
+<div class="content-section" id="duvidas"><FAQ title="Dúvidas sobre esta atividade." items={s.faq}/></div>
+</div></div>
+<section class="related section"><div class="section-heading"><h2>Outras informações que podem se complementar.</h2><p>A relação depende da finalidade, da etapa e dos elementos abrangidos pelo projeto.</p></div><ServiceList items={related} compact/></section>
+<ContactCTA title={ctaTitles[s.slug]} text={s.prepare} service={s.slug}/>
+</Layout>

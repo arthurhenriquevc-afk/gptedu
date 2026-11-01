@@ -1,0 +1,38 @@
+{
+  "typecheck": {
+    "files": 27,
+    "errors": 0,
+    "warnings": 0,
+    "hints": 0
+  },
+  "build": {
+    "pages": 21,
+    "output": "static"
+  },
+  "tests": {
+    "full_suite_passed": 7,
+    "affected_contact_nojs_recheck": 2
+  },
+  "screenshots": {
+    "count": 18,
+    "viewports": [
+      [
+        1536,
+        1024
+      ],
+      [
+        768,
+        1024
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "overflow": 0
+  },
+  "review": "direct-substitute; independent agents interrupted by tool usage limit",
+  "formal_impeccable_fidelity": "unproven; prior state targets superseded comp",
+  "publication": "not performed",
+  "contact_receiver": "not configured"
+}

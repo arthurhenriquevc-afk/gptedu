@@ -1,0 +1,303 @@
+{
+  "regions": [
+    {
+      "id": "wordmark",
+      "kind": "text",
+      "pixelBox": {
+        "x": 58,
+        "y": 17,
+        "w": 187,
+        "h": 35
+      },
+      "note": "Provisional UNION3D typeset wordmark, deep blue sans serif"
+    },
+    {
+      "id": "nav-services",
+      "kind": "control",
+      "pixelBox": {
+        "x": 905,
+        "y": 24,
+        "w": 57,
+        "h": 24
+      },
+      "note": "Navigation link text in deep blue on off-white background"
+    },
+    {
+      "id": "nav-about",
+      "kind": "control",
+      "pixelBox": {
+        "x": 1004,
+        "y": 24,
+        "w": 45,
+        "h": 24
+      },
+      "note": "Navigation link text in deep blue on off-white background"
+    },
+    {
+      "id": "nav-applications",
+      "kind": "control",
+      "pixelBox": {
+        "x": 1081,
+        "y": 24,
+        "w": 74,
+        "h": 24
+      },
+      "note": "Navigation link text in deep blue on off-white background"
+    },
+    {
+      "id": "nav-contact",
+      "kind": "control",
+      "pixelBox": {
+        "x": 1192,
+        "y": 24,
+        "w": 57,
+        "h": 24
+      },
+      "note": "Navigation link text in deep blue on off-white background"
+    },
+    {
+      "id": "header-action",
+      "kind": "control",
+      "pixelBox": {
+        "x": 1285,
+        "y": 12,
+        "w": 191,
+        "h": 44
+      },
+      "note": "Deep blue rectangular Solicitar orçamento action with white label and arrow"
+    },
+    {
+      "id": "headline",
+      "kind": "text",
+      "pixelBox": {
+        "x": 58,
+        "y": 108,
+        "w": 1418,
+        "h": 73
+      },
+      "note": "Antes de decidir, registre o que existe. Heavy sans serif single line heading in deep blue"
+    },
+    {
+      "id": "description",
+      "kind": "text",
+      "pixelBox": {
+        "x": 58,
+        "y": 199,
+        "w": 952,
+        "h": 28
+      },
+      "note": "Single line of supporting body text in regular deep blue sans serif"
+    },
+    {
+      "id": "hero-primary",
+      "kind": "control",
+      "pixelBox": {
+        "x": 60,
+        "y": 241,
+        "w": 237,
+        "h": 50
+      },
+      "note": "Deep blue filled Solicitar orçamento button with white text and arrow"
+    },
+    {
+      "id": "hero-secondary",
+      "kind": "control",
+      "pixelBox": {
+        "x": 317,
+        "y": 241,
+        "w": 192,
+        "h": 50
+      },
+      "note": "Off-white outlined Explorar serviços button with deep blue text"
+    },
+    {
+      "id": "hero-panorama",
+      "kind": "image",
+      "pixelBox": {
+        "x": 0,
+        "y": 244,
+        "w": 1536,
+        "h": 394
+      },
+      "note": "Conceptual unfinished concrete building panorama transitioning to point cloud at right, coastal distant city and sky. No UI text in the artwork.",
+      "bleed": true
+    },
+    {
+      "id": "conceptual-caption",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1183,
+        "y": 615,
+        "w": 315,
+        "h": 17
+      },
+      "note": "Small off-white caption Estudo visual conceitual — não representa obra da UNION3D over deep blue image"
+    },
+    {
+      "id": "windows-heading",
+      "kind": "text",
+      "pixelBox": {
+        "x": 58,
+        "y": 651,
+        "w": 741,
+        "h": 48
+      },
+      "note": "A obra avança. O acesso muda. Bold deep blue sans serif heading"
+    },
+    {
+      "id": "windows-intro",
+      "kind": "text",
+      "pixelBox": {
+        "x": 59,
+        "y": 712,
+        "w": 926,
+        "h": 23
+      },
+      "note": "Antes de recobrir ou alterar, registre as condições acessíveis ao levantamento. Regular deep blue text"
+    },
+    {
+      "id": "construction-section",
+      "kind": "plate",
+      "pixelBox": {
+        "x": 44,
+        "y": 741,
+        "w": 1454,
+        "h": 238
+      },
+      "note": "Wide conceptual cutaway illustration of one concrete building showing foundations, structure, visible service installations and geometric recorded condition, including thin vertical annotation leaders but no labels. Off-white background."
+    },
+    {
+      "id": "stage-1-number",
+      "kind": "text",
+      "pixelBox": {
+        "x": 187,
+        "y": 741,
+        "w": 25,
+        "h": 15
+      },
+      "note": "Small sequence number 01"
+    },
+    {
+      "id": "stage-1-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 187,
+        "y": 760,
+        "w": 125,
+        "h": 18
+      },
+      "note": "Bold stage label Fundações"
+    },
+    {
+      "id": "stage-1-description",
+      "kind": "text",
+      "pixelBox": {
+        "x": 187,
+        "y": 779,
+        "w": 125,
+        "h": 17
+      },
+      "note": "Short stage timing Antes da execução"
+    },
+    {
+      "id": "stage-2-number",
+      "kind": "text",
+      "pixelBox": {
+        "x": 532,
+        "y": 741,
+        "w": 25,
+        "h": 15
+      },
+      "note": "Small sequence number 02"
+    },
+    {
+      "id": "stage-2-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 532,
+        "y": 760,
+        "w": 182,
+        "h": 18
+      },
+      "note": "Bold stage label Estrutura"
+    },
+    {
+      "id": "stage-2-description",
+      "kind": "text",
+      "pixelBox": {
+        "x": 532,
+        "y": 779,
+        "w": 182,
+        "h": 17
+      },
+      "note": "Short stage timing Com referências acessíveis"
+    },
+    {
+      "id": "stage-3-number",
+      "kind": "text",
+      "pixelBox": {
+        "x": 895,
+        "y": 741,
+        "w": 25,
+        "h": 15
+      },
+      "note": "Small sequence number 03"
+    },
+    {
+      "id": "stage-3-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 895,
+        "y": 760,
+        "w": 172,
+        "h": 18
+      },
+      "note": "Bold stage label Instalações"
+    },
+    {
+      "id": "stage-3-description",
+      "kind": "text",
+      "pixelBox": {
+        "x": 895,
+        "y": 779,
+        "w": 172,
+        "h": 17
+      },
+      "note": "Short stage timing Antes dos fechamentos"
+    },
+    {
+      "id": "stage-4-number",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1278,
+        "y": 741,
+        "w": 25,
+        "h": 15
+      },
+      "note": "Small sequence number 04"
+    },
+    {
+      "id": "stage-4-title",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1278,
+        "y": 760,
+        "w": 140,
+        "h": 18
+      },
+      "note": "Bold stage label Intervenção"
+    },
+    {
+      "id": "stage-4-description",
+      "kind": "text",
+      "pixelBox": {
+        "x": 1278,
+        "y": 779,
+        "w": 140,
+        "h": 17
+      },
+      "note": "Short stage timing Antes da alteração"
+    }
+  ],
+  "allowUncovered": true
+}

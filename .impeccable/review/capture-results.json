@@ -1,0 +1,20 @@
+{
+  "files": [
+    "desktop-home.png",
+    "desktop-service.png",
+    "desktop-professionals.png",
+    "desktop-contact.png",
+    "desktop-about.png",
+    "tablet-home.png",
+    "tablet-service.png",
+    "tablet-professionals.png",
+    "tablet-contact.png",
+    "tablet-about.png",
+    "mobile-home.png",
+    "mobile-service.png",
+    "mobile-professionals.png",
+    "mobile-contact.png",
+    "mobile-about.png"
+  ],
+  "overflow": []
+}

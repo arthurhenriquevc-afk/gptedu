@@ -1,0 +1,8 @@
+---
+import Arrow from './Arrow.astro';
+import ServiceList from './ServiceList.astro';
+import { services, type Audience } from '../data/services';
+interface Props { audience?: Audience; }
+const {audience}=Astro.props;
+---
+<section class="section" id="lista" data-directory data-default-audience={audience||'todos'}><div class="filter-bar"><div class="audience-filters" aria-label="Filtrar serviços por público"><button class="filter-button" data-filter="todos" aria-pressed={!audience?'true':'false'}>Todos os serviços</button><button class="filter-button" data-filter="empresas" aria-pressed={audience==='empresas'?'true':'false'}>Para empresas</button><button class="filter-button" data-filter="profissionais" aria-pressed={audience==='profissionais'?'true':'false'}>Para profissionais</button></div><div class="search-field"><label for="service-search">Buscar por serviço ou necessidade</label><input id="service-search" type="search" placeholder="Ex.: interiores, laje, fachada" data-service-search autocomplete="off"/></div></div><p class="filter-result" data-filter-count aria-live="polite">10 serviços disponíveis</p><ServiceList items={services}/><div class="no-results" data-no-results hidden><h2>Nenhum serviço encontrado.</h2><p>Tente outro termo ou converse sobre a sua necessidade sem selecionar um serviço.</p><a class="text-link" href="/contato/">Pedir orientação <Arrow/></a></div><div class="help-row"><p>Não sabe qual atividade corresponde ao seu projeto? Conte a finalidade e as condições que precisa conhecer.</p><a class="text-link" href="/contato/">Pedir orientação <Arrow/></a></div></section>

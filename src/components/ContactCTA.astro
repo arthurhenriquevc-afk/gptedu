@@ -1,0 +1,6 @@
+---
+import Arrow from './Arrow.astro';
+interface Props { title?: string; text?: string; service?: string; }
+const {title='O próximo passo começa com o seu projeto.',text='Conte o que precisa conhecer, conferir ou documentar. A necessidade orienta a definição do escopo.',service} = Astro.props;
+---
+<section class="contact-cta section"><div><h2>{title}</h2><p>{text}</p></div><a class="button button-light" href={service?`/contato/?servico=${service}`:'/contato/'}>Solicitar orçamento <Arrow/></a></section>

@@ -1,0 +1,13 @@
+---
+import { services } from '../data/services';
+import Arrow from './Arrow.astro';
+const path = Astro.url.pathname;
+---
+<header class="site-header">
+  <a class="brand" href="/" aria-label="UNION3D — Início"><span class="wordmark">UNION3D</span><span class="brand-description">Reality capture<br/>para a construção</span></a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav"><span>Menu</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 8h18M3 16h18" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
+    <details class="services-menu"><summary class:list={{current:path.startsWith('/servicos')}}>Serviços<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary><div class="mega-menu"><div><a class="menu-category" href="/servicos/empresas/">Para empresas <Arrow/></a>{services.filter(s=>s.audience==='empresas').map(s=><a href={`/servicos/${s.slug}/`}>{s.name}</a>)}</div><div><a class="menu-category" href="/servicos/profissionais/">Para profissionais <Arrow/></a>{services.filter(s=>s.audience==='profissionais').map(s=><a href={`/servicos/${s.slug}/`}>{s.name}</a>)}<a class="menu-all" href="/servicos/">Explorar todos os serviços <Arrow/></a></div></div></details>
+    <a aria-current={path==='/sobre/'?'page':undefined} href="/sobre/">Sobre</a><a aria-current={path==='/aplicacoes/'?'page':undefined} href="/aplicacoes/">Aplicações</a><a aria-current={path==='/contato/'?'page':undefined} href="/contato/">Contato</a><a class="button button-small" href="/contato/">Solicitar orçamento <Arrow/></a>
+  </nav>
+</header>

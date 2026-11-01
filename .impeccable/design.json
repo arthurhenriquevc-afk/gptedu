@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-01T13:32:21.946597+00:00",
+  "title": "Design System: UNION3D",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "primary",
+        "displayName": "Azul institucional profundo"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Off-white mineral"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Archivo — abertura",
+        "purpose": "Título principal do hero; forte e legível."
+      }
+    },
+    "shadows": [
+      {
+        "name": "menu",
+        "value": "0 20px 40px #002e4014",
+        "purpose": "Separação do painel de navegação."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Transições de controles."
+      },
+      {
+        "name": "hero-duration",
+        "value": "2200ms",
+        "purpose": "Uma transição inicial interrompível."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "600px"
+      },
+      {
+        "name": "tablet",
+        "value": "900px"
+      },
+      {
+        "name": "compact-desktop",
+        "value": "1200px"
+      },
+      {
+        "name": "wide",
+        "value": "1800px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação principal de contato.",
+      "html": "<button class=\"ds-primary\">Solicitar orçamento</button>",
+      "css": ".ds-primary{background:var(--ink,#002e40);color:white;border:1px solid var(--ink,#002e40);border-radius:8px;padding:12px 24px;font:500 16px Arial,sans-serif;min-height:52px}.ds-primary:hover{background:#164657}.ds-primary:focus-visible{outline:3px solid #002e40;outline-offset:5px}"
+    },
+    {
+      "name": "Botão de apoio",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Explorar serviços sem competir com a ação principal.",
+      "html": "<button class=\"ds-outline\">Explorar serviços</button>",
+      "css": ".ds-outline{background:var(--paper,#f7f7f3);color:var(--ink,#002e40);border:1px solid currentColor;border-radius:8px;padding:12px 24px;font:500 16px Arial,sans-serif;min-height:52px}.ds-outline:hover{background:#edeeea}.ds-outline:focus-visible{outline:3px solid #002e40;outline-offset:5px}"
+    },
+    {
+      "name": "Campo de formulário",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Campo identificado, sem rótulo substituído por placeholder.",
+      "html": "<label class=\"ds-field\">Nome<input placeholder=\"Seu nome\"></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:7px;color:var(--text,#162f39);font:15px Arial,sans-serif}.ds-field input{padding:12px 14px;border:1px solid #9ba9ad;background:var(--paper,#f7f7f3);border-radius:8px;font:16px Arial,sans-serif}.ds-field input:focus-visible{outline:3px solid #002e40;outline-offset:5px}"
+    },
+    {
+      "name": "Link contextual",
+      "kind": "custom",
+      "description": "Ligação editorial com sublinhado reconhecível.",
+      "html": "<a class=\"ds-link\" href=\"#\">Conhecer o serviço <svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" aria-hidden=\"true\"><path d=\"M4 12h15m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ".ds-link{display:inline-flex;align-items:center;gap:20px;color:var(--ink,#002e40);font:500 16px Arial,sans-serif;text-underline-offset:4px}.ds-link:hover{text-decoration-thickness:2px}.ds-link:focus-visible{outline:3px solid #002e40;outline-offset:5px}"
+    },
+    {
+      "name": "Pergunta expansível",
+      "kind": "custom",
+      "description": "Disclosure nativo de perguntas frequentes.",
+      "html": "<details class=\"ds-faq\"><summary>Como os dados são entregues?</summary><p>Materiais e abrangência são definidos conforme o escopo.</p></details>",
+      "css": ".ds-faq{border-top:1px solid #ccd2d0;border-bottom:1px solid #ccd2d0;color:#002e40;font:16px/1.6 Arial,sans-serif}.ds-faq summary{padding:20px 0;cursor:pointer;font-weight:500}.ds-faq summary:hover{text-decoration:underline}.ds-faq summary:focus-visible{outline:3px solid #002e40;outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Registro em corte",
+    "overview": "Linguagem editorial arquitetônica: grandes imagens, alinhamentos precisos e diferenças de escala. O espaço físico e sua representação são o conteúdo visual; a interface organiza a leitura com tipografia e respiro.",
+    "keyCharacteristics": [
+      "Base clara e seções escuras pontuais.",
+      "Composição assimétrica, com informação legível antes do efeito.",
+      "Uma família tipográfica com papéis distintos.",
+      "Conteúdo técnico e limites de escopo compreensíveis."
+    ],
+    "rules": [
+      {
+        "name": "The Purposeful Contrast Rule",
+        "body": "Reservar grandes áreas escuras para uma mudança de assunto ou uma chamada importante, sem alternância mecânica.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Construir hierarquia com peso, escala e espaço; não acrescentar uma família decorativa para parecer técnico.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Preservar espaço, hierarquia e rigor dos alinhamentos.",
+      "Identificar imagens conceituais enquanto não houver acervo autorizado."
+    ],
+    "donts": [
+      "Inventar clientes, métricas, garantias ou projetos.",
+      "Usar neon, gradientes decorativos, brilho ou estética de dashboard."
+    ]
+  }
+}

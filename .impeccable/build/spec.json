@@ -1,0 +1,1828 @@
+{
+  "tool": "comp-spec",
+  "version": 1,
+  "createdAt": "2026-11-01T12:21:19.744Z",
+  "comp": ".impeccable/mocks/c-registro-em-corte.png",
+  "warnings": [
+    "region hero-panorama: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)"
+  ],
+  "uncoveredInkCells": [
+    "F6",
+    "G6",
+    "H6",
+    "I6",
+    "J6"
+  ],
+  "compSize": {
+    "width": 1536,
+    "height": 1024
+  },
+  "aspect": 1.5,
+  "orientation": "landscape",
+  "palette": [
+    {
+      "hex": "#f6f6f6",
+      "coverage": 0.6611
+    },
+    {
+      "hex": "#0c2734",
+      "coverage": 0.1423
+    },
+    {
+      "hex": "#999da1",
+      "coverage": 0.083
+    },
+    {
+      "hex": "#d0d1d6",
+      "coverage": 0.0594
+    },
+    {
+      "hex": "#514a41",
+      "coverage": 0.0542
+    }
+  ],
+  "bands": [
+    {
+      "y": 0.0118,
+      "strength": 0.4399
+    },
+    {
+      "y": 0.0471,
+      "strength": 0.3893
+    },
+    {
+      "y": 0.1294,
+      "strength": 1
+    },
+    {
+      "y": 0.1765,
+      "strength": 1
+    },
+    {
+      "y": 0.2,
+      "strength": 0.408
+    },
+    {
+      "y": 0.2353,
+      "strength": 0.472
+    },
+    {
+      "y": 0.2824,
+      "strength": 0.3581
+    },
+    {
+      "y": 0.3059,
+      "strength": 1
+    },
+    {
+      "y": 0.4824,
+      "strength": 0.2391
+    },
+    {
+      "y": 0.5412,
+      "strength": 0.2279
+    },
+    {
+      "y": 0.6235,
+      "strength": 1
+    },
+    {
+      "y": 0.6471,
+      "strength": 0.4646
+    },
+    {
+      "y": 0.6824,
+      "strength": 0.7584
+    },
+    {
+      "y": 0.7176,
+      "strength": 0.2666
+    },
+    {
+      "y": 0.7412,
+      "strength": 0.234
+    },
+    {
+      "y": 0.8,
+      "strength": 0.6991
+    },
+    {
+      "y": 0.8588,
+      "strength": 0.6052
+    },
+    {
+      "y": 0.8824,
+      "strength": 0.3701
+    },
+    {
+      "y": 0.9176,
+      "strength": 0.4599
+    },
+    {
+      "y": 0.9529,
+      "strength": 1
+    }
+  ],
+  "regions": [
+    {
+      "id": "wordmark",
+      "kind": "text",
+      "note": "Provisional UNION3D typeset wordmark, deep blue sans serif",
+      "grid": null,
+      "box": {
+        "x": 0.0378,
+        "y": 0.0166,
+        "w": 0.1217,
+        "h": 0.0342
+      },
+      "px": {
+        "x": 58,
+        "y": 17,
+        "w": 187,
+        "h": 35
+      },
+      "aspect": 5.3429,
+      "palette": [
+        {
+          "hex": "#f6f6f6",
+          "coverage": 0.4727
+        },
+        {
+          "hex": "#092432",
+          "coverage": 0.3409
+        },
+        {
+          "hex": "#687e89",
+          "coverage": 0.0879
+        },
+        {
+          "hex": "#204550",
+          "coverage": 0.0586
+        },
+        {
+          "hex": "#aebdbf",
+          "coverage": 0.0399
+        }
+      ],
+      "detail": {
+        "energy": 54.4776
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 7,
+          "capHeightPx": 27.6,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.9415,
+          "advTall": 0.9415,
+          "advX": null,
+          "gap": 0.1086,
+          "xRatio": null,
+          "stemW": 0.2704,
+          "contrast": 1.2165,
+          "serif": 0.6163,
+          "densTall": 0.6911,
+          "densX": null,
+          "weight": 0.6911
+        },
+        "widthClass": "wide",
+        "weightClass": "black"
+      }
+    },
+    {
+      "id": "nav-services",
+      "kind": "control",
+      "note": "Navigation link text in deep blue on off-white background",
+      "grid": null,
+      "box": {
+        "x": 0.5892,
+        "y": 0.0234,
+        "w": 0.0371,
+        "h": 0.0234
+      },
+      "px": {
+        "x": 905,
+        "y": 24,
+        "w": 57,
+        "h": 24
+      },
+      "aspect": 2.375,
+      "palette": [
+        {
+          "hex": "#f6f6f6",
+          "coverage": 0.8581
+        },
+        {
+          "hex": "#bac8ca",
+          "coverage": 0.0473
+        },
+        {
+          "hex": "#3b485e",
+          "coverage": 0.0338
+        },
+        {
+          "hex": "#687885",
+          "coverage": 0.0338
+        },
+        {
+          "hex": "#142c3c",
+          "coverage": 0.027
+        }
+      ],
+      "detail": {
+        "energy": 21.2713
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "nav-about",
+      "kind": "control",
+      "note": "Navigation link text in deep blue on off-white background",
+      "grid": null,
+      "box": {
+        "x": 0.6536,
+        "y": 0.0234,
+        "w": 0.0293,
+        "h": 0.0234
+      },
+      "px": {
+        "x": 1004,
+        "y": 24,
+        "w": 45,
+        "h": 24
+      },
+      "aspect": 1.875,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.825
+        },
+        {
+          "hex": "#a9b1bb",
+          "coverage": 0.1
+        },
+        {
+          "hex": "#0c1c38",
+          "coverage": 0.0333
+        },
+        {
+          "hex": "#24384c",
+          "coverage": 0.0333
+        },
+        {
+          "hex": "#687888",
+          "coverage": 0.0083
+        }
+      ],
+      "detail": {
+        "energy": 15.7891
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "nav-applications",
+      "kind": "control",
+      "note": "Navigation link text in deep blue on off-white background",
+      "grid": null,
+      "box": {
+        "x": 0.7038,
+        "y": 0.0234,
+        "w": 0.0482,
+        "h": 0.0234
+      },
+      "px": {
+        "x": 1081,
+        "y": 24,
+        "w": 74,
+        "h": 24
+      },
+      "aspect": 3.0833,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.8265
+        },
+        {
+          "hex": "#0f2031",
+          "coverage": 0.0612
+        },
+        {
+          "hex": "#b1bfc3",
+          "coverage": 0.0612
+        },
+        {
+          "hex": "#3b5060",
+          "coverage": 0.0306
+        },
+        {
+          "hex": "#080c2c",
+          "coverage": 0.0204
+        }
+      ],
+      "detail": {
+        "energy": 26.6374
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "nav-contact",
+      "kind": "control",
+      "note": "Navigation link text in deep blue on off-white background",
+      "grid": null,
+      "box": {
+        "x": 0.776,
+        "y": 0.0234,
+        "w": 0.0371,
+        "h": 0.0234
+      },
+      "px": {
+        "x": 1192,
+        "y": 24,
+        "w": 57,
+        "h": 24
+      },
+      "aspect": 2.375,
+      "palette": [
+        {
+          "hex": "#f7f8f8",
+          "coverage": 0.8188
+        },
+        {
+          "hex": "#bfc5cc",
+          "coverage": 0.0805
+        },
+        {
+          "hex": "#586a73",
+          "coverage": 0.047
+        },
+        {
+          "hex": "#0d2333",
+          "coverage": 0.0403
+        },
+        {
+          "hex": "#081030",
+          "coverage": 0.0134
+        }
+      ],
+      "detail": {
+        "energy": 19.6729
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "header-action",
+      "kind": "control",
+      "note": "Deep blue rectangular Solicitar orçamento action with white label and arrow",
+      "grid": null,
+      "box": {
+        "x": 0.8366,
+        "y": 0.0117,
+        "w": 0.1243,
+        "h": 0.043
+      },
+      "px": {
+        "x": 1285,
+        "y": 12,
+        "w": 191,
+        "h": 44
+      },
+      "aspect": 4.3409,
+      "palette": [
+        {
+          "hex": "#082737",
+          "coverage": 0.8449
+        },
+        {
+          "hex": "#668187",
+          "coverage": 0.0738
+        },
+        {
+          "hex": "#32515b",
+          "coverage": 0.0348
+        },
+        {
+          "hex": "#eff4f3",
+          "coverage": 0.0348
+        },
+        {
+          "hex": "#a2b1b8",
+          "coverage": 0.0116
+        }
+      ],
+      "detail": {
+        "energy": 29.922
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      }
+    },
+    {
+      "id": "headline",
+      "kind": "text",
+      "note": "Antes de decidir, registre o que existe. Heavy sans serif single line heading in deep blue",
+      "grid": null,
+      "box": {
+        "x": 0.0378,
+        "y": 0.1055,
+        "w": 0.9232,
+        "h": 0.0713
+      },
+      "px": {
+        "x": 58,
+        "y": 108,
+        "w": 1418,
+        "h": 73
+      },
+      "aspect": 19.4247,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.5985
+        },
+        {
+          "hex": "#082635",
+          "coverage": 0.3593
+        },
+        {
+          "hex": "#a6b2b8",
+          "coverage": 0.0205
+        },
+        {
+          "hex": "#677e87",
+          "coverage": 0.0109
+        },
+        {
+          "hex": "#3b5864",
+          "coverage": 0.0109
+        }
+      ],
+      "detail": {
+        "energy": 156.4044
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 25,
+          "capHeightPx": 63.1,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.7131,
+          "advTall": 0.729,
+          "advX": 0.7131,
+          "gap": 0.0396,
+          "xRatio": 0.7185,
+          "stemW": 0.2208,
+          "contrast": 1.2679,
+          "serif": null,
+          "densTall": 0.607,
+          "densX": 0.6551,
+          "weight": 0.607
+        },
+        "widthClass": "normal",
+        "weightClass": "bold",
+        "chosen": {
+          "family": "Red Rose",
+          "weight": 700,
+          "fontSizePx": 90,
+          "source": "catalog",
+          "estimatedSize": true,
+          "stamp": "3fbb645b05ba"
+        }
+      }
+    },
+    {
+      "id": "description",
+      "kind": "text",
+      "note": "Single line of supporting body text in regular deep blue sans serif",
+      "grid": null,
+      "box": {
+        "x": 0.0378,
+        "y": 0.1943,
+        "w": 0.6198,
+        "h": 0.0273
+      },
+      "px": {
+        "x": 58,
+        "y": 199,
+        "w": 952,
+        "h": 28
+      },
+      "aspect": 34,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.815
+        },
+        {
+          "hex": "#112333",
+          "coverage": 0.0623
+        },
+        {
+          "hex": "#c2cad0",
+          "coverage": 0.0457
+        },
+        {
+          "hex": "#586b78",
+          "coverage": 0.0441
+        },
+        {
+          "hex": "#8696a0",
+          "coverage": 0.0328
+        }
+      ],
+      "detail": {
+        "energy": 82.26
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 70,
+          "capHeightPx": 18.5,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.5821,
+          "advTall": 0.4061,
+          "advX": 0.5956,
+          "gap": 0.1083,
+          "xRatio": 0.7427,
+          "stemW": 0.1225,
+          "contrast": 1.0582,
+          "serif": 0.4398,
+          "densTall": 0.4034,
+          "densX": 0.4636,
+          "weight": 0.4034
+        },
+        "widthClass": "normal",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "hero-primary",
+      "kind": "control",
+      "note": "Deep blue filled Solicitar orçamento button with white text and arrow",
+      "grid": null,
+      "box": {
+        "x": 0.0391,
+        "y": 0.2354,
+        "w": 0.1543,
+        "h": 0.0488
+      },
+      "px": {
+        "x": 60,
+        "y": 241,
+        "w": 237,
+        "h": 50
+      },
+      "aspect": 4.74,
+      "palette": [
+        {
+          "hex": "#082738",
+          "coverage": 0.7872
+        },
+        {
+          "hex": "#254755",
+          "coverage": 0.1374
+        },
+        {
+          "hex": "#acbcc3",
+          "coverage": 0.04
+        },
+        {
+          "hex": "#f2f4f6",
+          "coverage": 0.0204
+        },
+        {
+          "hex": "#6c868e",
+          "coverage": 0.0151
+        }
+      ],
+      "detail": {
+        "energy": 31.6013
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": true
+      }
+    },
+    {
+      "id": "hero-secondary",
+      "kind": "control",
+      "note": "Off-white outlined Explorar serviços button with deep blue text",
+      "grid": null,
+      "box": {
+        "x": 0.2064,
+        "y": 0.2354,
+        "w": 0.125,
+        "h": 0.0488
+      },
+      "px": {
+        "x": 317,
+        "y": 241,
+        "w": 192,
+        "h": 50
+      },
+      "aspect": 3.84,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.8097
+        },
+        {
+          "hex": "#233c4c",
+          "coverage": 0.1356
+        },
+        {
+          "hex": "#b4c0c5",
+          "coverage": 0.0316
+        },
+        {
+          "hex": "#869a9f",
+          "coverage": 0.0121
+        },
+        {
+          "hex": "#697b89",
+          "coverage": 0.0111
+        }
+      ],
+      "detail": {
+        "energy": 35.4379
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": true
+      }
+    },
+    {
+      "id": "hero-panorama",
+      "kind": "image",
+      "note": "Conceptual unfinished concrete building panorama transitioning to point cloud at right, coastal distant city and sky. No UI text in the artwork.",
+      "grid": null,
+      "bleed": true,
+      "box": {
+        "x": 0,
+        "y": 0.2383,
+        "w": 1,
+        "h": 0.3848
+      },
+      "px": {
+        "x": 0,
+        "y": 244,
+        "w": 1536,
+        "h": 394
+      },
+      "aspect": 3.8985,
+      "palette": [
+        {
+          "hex": "#ecedee",
+          "coverage": 0.46
+        },
+        {
+          "hex": "#0d2834",
+          "coverage": 0.2379
+        },
+        {
+          "hex": "#4a5961",
+          "coverage": 0.1129
+        },
+        {
+          "hex": "#7e8a91",
+          "coverage": 0.1039
+        },
+        {
+          "hex": "#625244",
+          "coverage": 0.0854
+        }
+      ],
+      "detail": {
+        "energy": 38.635
+      },
+      "medium": "raster",
+      "plate": "assets/plates/hero-panorama.png",
+      "text": null
+    },
+    {
+      "id": "conceptual-caption",
+      "kind": "text",
+      "note": "Small off-white caption Estudo visual conceitual — não representa obra da UNION3D over deep blue image",
+      "grid": null,
+      "box": {
+        "x": 0.7702,
+        "y": 0.6006,
+        "w": 0.2051,
+        "h": 0.0166
+      },
+      "px": {
+        "x": 1183,
+        "y": 615,
+        "w": 315,
+        "h": 17
+      },
+      "aspect": 18.5294,
+      "palette": [
+        {
+          "hex": "#092635",
+          "coverage": 0.7416
+        },
+        {
+          "hex": "#788e96",
+          "coverage": 0.118
+        },
+        {
+          "hex": "#425a67",
+          "coverage": 0.1005
+        },
+        {
+          "hex": "#a6b2b6",
+          "coverage": 0.0239
+        },
+        {
+          "hex": "#080b18",
+          "coverage": 0.0159
+        }
+      ],
+      "detail": {
+        "energy": 61.0626
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 38,
+          "capHeightPx": 10,
+          "inkIsDark": false,
+          "allCaps": false,
+          "advance": 0.5856,
+          "advTall": 0.6357,
+          "advX": 0.5688,
+          "gap": 0.0669,
+          "xRatio": 0.6915,
+          "stemW": 0.174,
+          "contrast": 1.1015,
+          "serif": 0.3652,
+          "densTall": 0.5098,
+          "densX": 0.5789,
+          "weight": 0.5098
+        },
+        "widthClass": "condensed",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "windows-heading",
+      "kind": "text",
+      "note": "A obra avança. O acesso muda. Bold deep blue sans serif heading",
+      "grid": null,
+      "box": {
+        "x": 0.0378,
+        "y": 0.6357,
+        "w": 0.4824,
+        "h": 0.0469
+      },
+      "px": {
+        "x": 58,
+        "y": 651,
+        "w": 741,
+        "h": 48
+      },
+      "aspect": 15.4375,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.6338
+        },
+        {
+          "hex": "#082634",
+          "coverage": 0.292
+        },
+        {
+          "hex": "#3d5964",
+          "coverage": 0.0287
+        },
+        {
+          "hex": "#b0bdc1",
+          "coverage": 0.0243
+        },
+        {
+          "hex": "#728891",
+          "coverage": 0.0212
+        }
+      ],
+      "detail": {
+        "energy": 129.0944
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 20,
+          "capHeightPx": 38.7,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6981,
+          "advTall": 0.8145,
+          "advX": 0.6723,
+          "gap": 0.0517,
+          "xRatio": 0.7498,
+          "stemW": 0.2232,
+          "contrast": 1.2294,
+          "serif": null,
+          "densTall": 0.5804,
+          "densX": 0.6534,
+          "weight": 0.5804
+        },
+        "widthClass": "normal",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "windows-intro",
+      "kind": "text",
+      "note": "Antes de recobrir ou alterar, registre as condições acessíveis ao levantamento. Regular deep blue text",
+      "grid": null,
+      "box": {
+        "x": 0.0384,
+        "y": 0.6953,
+        "w": 0.6029,
+        "h": 0.0225
+      },
+      "px": {
+        "x": 59,
+        "y": 712,
+        "w": 926,
+        "h": 23
+      },
+      "aspect": 40.2609,
+      "palette": [
+        {
+          "hex": "#f7f8f8",
+          "coverage": 0.8248
+        },
+        {
+          "hex": "#b8c2c7",
+          "coverage": 0.0629
+        },
+        {
+          "hex": "#71818c",
+          "coverage": 0.0449
+        },
+        {
+          "hex": "#354b59",
+          "coverage": 0.0416
+        },
+        {
+          "hex": "#0d1e32",
+          "coverage": 0.0257
+        }
+      ],
+      "detail": {
+        "energy": 52.853
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": false,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 66,
+          "capHeightPx": 16,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.5937,
+          "advTall": 0.4062,
+          "advX": 0.5937,
+          "gap": 0.125,
+          "xRatio": 0.7352,
+          "stemW": 0.1343,
+          "contrast": 1.0327,
+          "serif": null,
+          "densTall": 0.4352,
+          "densX": 0.4921,
+          "weight": 0.4352
+        },
+        "widthClass": "normal",
+        "weightClass": "regular"
+      }
+    },
+    {
+      "id": "construction-section",
+      "kind": "plate",
+      "note": "Wide conceptual cutaway illustration of one concrete building showing foundations, structure, visible service installations and geometric recorded condition, including thin vertical annotation leaders but no labels. Off-white background.",
+      "grid": null,
+      "box": {
+        "x": 0.0286,
+        "y": 0.7236,
+        "w": 0.9466,
+        "h": 0.2324
+      },
+      "px": {
+        "x": 44,
+        "y": 741,
+        "w": 1454,
+        "h": 238
+      },
+      "aspect": 6.1092,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.448
+        },
+        {
+          "hex": "#a1a0a0",
+          "coverage": 0.1871
+        },
+        {
+          "hex": "#2f2a27",
+          "coverage": 0.1365
+        },
+        {
+          "hex": "#594e46",
+          "coverage": 0.1183
+        },
+        {
+          "hex": "#78726d",
+          "coverage": 0.1102
+        }
+      ],
+      "detail": {
+        "energy": 48.5062
+      },
+      "medium": "raster",
+      "plate": "assets/plates/construction-section.png",
+      "text": null
+    },
+    {
+      "id": "stage-1-number",
+      "kind": "text",
+      "note": "Small sequence number 01",
+      "grid": null,
+      "box": {
+        "x": 0.1217,
+        "y": 0.7236,
+        "w": 0.0163,
+        "h": 0.0146
+      },
+      "px": {
+        "x": 187,
+        "y": 741,
+        "w": 25,
+        "h": 15
+      },
+      "aspect": 1.6667,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.9111
+        },
+        {
+          "hex": "#486373",
+          "coverage": 0.0667
+        },
+        {
+          "hex": "#b8b8c8",
+          "coverage": 0.0222
+        }
+      ],
+      "detail": {
+        "energy": 4.8589
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 2,
+          "capHeightPx": 7.6,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6564,
+          "advTall": 0.6564,
+          "advX": null,
+          "gap": 0.0985,
+          "xRatio": 0.8173,
+          "stemW": 0.2397,
+          "contrast": 1.081,
+          "serif": 1.001,
+          "densTall": 0.5641,
+          "densX": null,
+          "weight": 0.5641
+        },
+        "widthClass": "normal",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "stage-1-title",
+      "kind": "text",
+      "note": "Bold stage label Fundações",
+      "grid": null,
+      "box": {
+        "x": 0.1217,
+        "y": 0.7422,
+        "w": 0.0814,
+        "h": 0.0176
+      },
+      "px": {
+        "x": 187,
+        "y": 760,
+        "w": 125,
+        "h": 18
+      },
+      "aspect": 6.9444,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.7542
+        },
+        {
+          "hex": "#1e3246",
+          "coverage": 0.0833
+        },
+        {
+          "hex": "#95a1a9",
+          "coverage": 0.0583
+        },
+        {
+          "hex": "#081527",
+          "coverage": 0.0583
+        },
+        {
+          "hex": "#697e89",
+          "coverage": 0.0458
+        }
+      ],
+      "detail": {
+        "energy": 48.2725
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 7,
+          "capHeightPx": 13.1,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6288,
+          "advTall": 0.7621,
+          "advX": 0.6097,
+          "gap": 0.0762,
+          "xRatio": 0.7907,
+          "stemW": 0.196,
+          "contrast": 1.1226,
+          "serif": null,
+          "densTall": 0.5228,
+          "densX": 0.6416,
+          "weight": 0.5228
+        },
+        "widthClass": "normal",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "stage-1-description",
+      "kind": "text",
+      "note": "Short stage timing Antes da execução",
+      "grid": null,
+      "box": {
+        "x": 0.1217,
+        "y": 0.7607,
+        "w": 0.0814,
+        "h": 0.0166
+      },
+      "px": {
+        "x": 187,
+        "y": 779,
+        "w": 125,
+        "h": 17
+      },
+      "aspect": 7.3529,
+      "palette": [
+        {
+          "hex": "#f7f8f7",
+          "coverage": 0.68
+        },
+        {
+          "hex": "#3a4f5f",
+          "coverage": 0.116
+        },
+        {
+          "hex": "#c0c8cc",
+          "coverage": 0.104
+        },
+        {
+          "hex": "#8a979e",
+          "coverage": 0.06
+        },
+        {
+          "hex": "#5e7278",
+          "coverage": 0.04
+        }
+      ],
+      "detail": {
+        "energy": 45.7728
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 14,
+          "capHeightPx": 11,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6347,
+          "advTall": 0.6649,
+          "advX": 0.6045,
+          "gap": 0.0604,
+          "xRatio": 0.7212,
+          "stemW": 0.1711,
+          "contrast": 1.0818,
+          "serif": null,
+          "densTall": 0.5197,
+          "densX": 0.557,
+          "weight": 0.5197
+        },
+        "widthClass": "normal",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "stage-2-number",
+      "kind": "text",
+      "note": "Small sequence number 02",
+      "grid": null,
+      "box": {
+        "x": 0.3464,
+        "y": 0.7236,
+        "w": 0.0163,
+        "h": 0.0146
+      },
+      "px": {
+        "x": 532,
+        "y": 741,
+        "w": 25,
+        "h": 15
+      },
+      "aspect": 1.6667,
+      "palette": [
+        {
+          "hex": "#f4f6f6",
+          "coverage": 0.8667
+        },
+        {
+          "hex": "#486070",
+          "coverage": 0.0889
+        },
+        {
+          "hex": "#98a8a8",
+          "coverage": 0.0222
+        },
+        {
+          "hex": "#c8c8c8",
+          "coverage": 0.0222
+        }
+      ],
+      "detail": {
+        "energy": 9.0062
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": null,
+        "measuredAt": "2026-11-01T12:21:42.519Z",
+        "note": "no separable lettering in the crop; size by the region box"
+      }
+    },
+    {
+      "id": "stage-2-title",
+      "kind": "text",
+      "note": "Bold stage label Estrutura",
+      "grid": null,
+      "box": {
+        "x": 0.3464,
+        "y": 0.7422,
+        "w": 0.1185,
+        "h": 0.0176
+      },
+      "px": {
+        "x": 532,
+        "y": 760,
+        "w": 182,
+        "h": 18
+      },
+      "aspect": 10.1111,
+      "palette": [
+        {
+          "hex": "#f7f8f8",
+          "coverage": 0.8366
+        },
+        {
+          "hex": "#b7bfc2",
+          "coverage": 0.0665
+        },
+        {
+          "hex": "#1a3747",
+          "coverage": 0.0388
+        },
+        {
+          "hex": "#09162c",
+          "coverage": 0.036
+        },
+        {
+          "hex": "#7a8e98",
+          "coverage": 0.0222
+        }
+      ],
+      "detail": {
+        "energy": 38.9299
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 9,
+          "capHeightPx": 10.7,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.7486,
+          "advTall": 0.7486,
+          "advX": null,
+          "gap": 0.2339,
+          "xRatio": null,
+          "stemW": 0.2275,
+          "contrast": 1.1886,
+          "serif": null,
+          "densTall": 0.6259,
+          "densX": null,
+          "weight": 0.6259
+        },
+        "widthClass": "normal",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "stage-2-description",
+      "kind": "text",
+      "note": "Short stage timing Com referências acessíveis",
+      "grid": null,
+      "box": {
+        "x": 0.3464,
+        "y": 0.7607,
+        "w": 0.1185,
+        "h": 0.0166
+      },
+      "px": {
+        "x": 532,
+        "y": 779,
+        "w": 182,
+        "h": 17
+      },
+      "aspect": 10.7059,
+      "palette": [
+        {
+          "hex": "#f6f6f7",
+          "coverage": 0.8548
+        },
+        {
+          "hex": "#c8cdd4",
+          "coverage": 0.0548
+        },
+        {
+          "hex": "#2d4455",
+          "coverage": 0.0411
+        },
+        {
+          "hex": "#526474",
+          "coverage": 0.0301
+        },
+        {
+          "hex": "#81919a",
+          "coverage": 0.0192
+        }
+      ],
+      "detail": {
+        "energy": 58.9333
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 24,
+          "capHeightPx": 9.2,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.685,
+          "advTall": 0.7031,
+          "advX": 0.1803,
+          "gap": 0.1082,
+          "xRatio": 0.8096,
+          "stemW": 0.1859,
+          "contrast": 1.1347,
+          "serif": null,
+          "densTall": 0.5136,
+          "densX": 0.8837,
+          "weight": 0.5136
+        },
+        "widthClass": "compressed",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "stage-3-number",
+      "kind": "text",
+      "note": "Small sequence number 03",
+      "grid": null,
+      "box": {
+        "x": 0.5827,
+        "y": 0.7236,
+        "w": 0.0163,
+        "h": 0.0146
+      },
+      "px": {
+        "x": 895,
+        "y": 741,
+        "w": 25,
+        "h": 15
+      },
+      "aspect": 1.6667,
+      "palette": [
+        {
+          "hex": "#f6f7f7",
+          "coverage": 0.8667
+        },
+        {
+          "hex": "#74848c",
+          "coverage": 0.0889
+        },
+        {
+          "hex": "#384858",
+          "coverage": 0.0444
+        }
+      ],
+      "detail": {
+        "energy": 8.4667
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": null,
+        "measuredAt": "2026-11-01T12:21:42.683Z",
+        "note": "no separable lettering in the crop; size by the region box"
+      }
+    },
+    {
+      "id": "stage-3-title",
+      "kind": "text",
+      "note": "Bold stage label Instalações",
+      "grid": null,
+      "box": {
+        "x": 0.5827,
+        "y": 0.7422,
+        "w": 0.112,
+        "h": 0.0176
+      },
+      "px": {
+        "x": 895,
+        "y": 760,
+        "w": 172,
+        "h": 18
+      },
+      "aspect": 9.5556,
+      "palette": [
+        {
+          "hex": "#f7f7f7",
+          "coverage": 0.7803
+        },
+        {
+          "hex": "#0c192e",
+          "coverage": 0.0867
+        },
+        {
+          "hex": "#a8b1b8",
+          "coverage": 0.0694
+        },
+        {
+          "hex": "#374d5d",
+          "coverage": 0.0405
+        },
+        {
+          "hex": "#768492",
+          "coverage": 0.0231
+        }
+      ],
+      "detail": {
+        "energy": 45.7338
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 11,
+          "capHeightPx": 10.5,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.7489,
+          "advTall": 0.7489,
+          "advX": null,
+          "gap": 0.0956,
+          "xRatio": null,
+          "stemW": 0.2275,
+          "contrast": 1.1364,
+          "serif": 0.5326,
+          "densTall": 0.6274,
+          "densX": null,
+          "weight": 0.6274
+        },
+        "widthClass": "normal",
+        "weightClass": "bold"
+      }
+    },
+    {
+      "id": "stage-3-description",
+      "kind": "text",
+      "note": "Short stage timing Antes dos fechamentos",
+      "grid": null,
+      "box": {
+        "x": 0.5827,
+        "y": 0.7607,
+        "w": 0.112,
+        "h": 0.0166
+      },
+      "px": {
+        "x": 895,
+        "y": 779,
+        "w": 172,
+        "h": 17
+      },
+      "aspect": 10.1176,
+      "palette": [
+        {
+          "hex": "#f6f6f6",
+          "coverage": 0.8592
+        },
+        {
+          "hex": "#3a4d5b",
+          "coverage": 0.069
+        },
+        {
+          "hex": "#b4bcc4",
+          "coverage": 0.0374
+        },
+        {
+          "hex": "#788691",
+          "coverage": 0.0259
+        },
+        {
+          "hex": "#4d686d",
+          "coverage": 0.0086
+        }
+      ],
+      "detail": {
+        "energy": 48.1241
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 17,
+          "capHeightPx": 9.2,
+          "inkIsDark": true,
+          "allCaps": false,
+          "advance": 0.6858,
+          "advTall": 0.6858,
+          "advX": null,
+          "gap": 0.0722,
+          "xRatio": 0.8101,
+          "stemW": 0.1747,
+          "contrast": 1.0946,
+          "serif": null,
+          "densTall": 0.5209,
+          "densX": null,
+          "weight": 0.5209
+        },
+        "widthClass": "normal",
+        "weightClass": "medium"
+      }
+    },
+    {
+      "id": "stage-4-number",
+      "kind": "text",
+      "note": "Small sequence number 04",
+      "grid": null,
+      "box": {
+        "x": 0.832,
+        "y": 0.7236,
+        "w": 0.0163,
+        "h": 0.0146
+      },
+      "px": {
+        "x": 1278,
+        "y": 741,
+        "w": 25,
+        "h": 15
+      },
+      "aspect": 1.6667,
+      "palette": [
+        {
+          "hex": "#f7f7f8",
+          "coverage": 0.8667
+        },
+        {
+          "hex": "#40505c",
+          "coverage": 0.0889
+        },
+        {
+          "hex": "#c8d0d8",
+          "coverage": 0.0444
+        }
+      ],
+      "detail": {
+        "energy": 9.1699
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": null,
+        "measuredAt": "2026-11-01T12:21:42.841Z",
+        "note": "no separable lettering in the crop; size by the region box"
+      }
+    },
+    {
+      "id": "stage-4-title",
+      "kind": "text",
+      "note": "Bold stage label Intervenção",
+      "grid": null,
+      "box": {
+        "x": 0.832,
+        "y": 0.7422,
+        "w": 0.0911,
+        "h": 0.0176
+      },
+      "px": {
+        "x": 1278,
+        "y": 760,
+        "w": 140,
+        "h": 18
+      },
+      "aspect": 7.7778,
+      "palette": [
+        {
+          "hex": "#f6f7f7",
+          "coverage": 0.7706
+        },
+        {
+          "hex": "#566e79",
+          "coverage": 0.0896
+        },
+        {
+          "hex": "#091b30",
+          "coverage": 0.0681
+        },
+        {
+          "hex": "#bdc7cd",
+          "coverage": 0.043
+        },
+        {
+          "hex": "#8e9ca4",
+          "coverage": 0.0287
+        }
+      ],
+      "detail": {
+        "energy": 42.0611
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 13,
+          "capHeightPx": 9.2,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.668,
+          "advTall": 0.668,
+          "advX": null,
+          "gap": 0.1264,
+          "xRatio": null,
+          "stemW": 0.271,
+          "contrast": 1.5426,
+          "serif": null,
+          "densTall": 0.6738,
+          "densX": null,
+          "weight": 0.6738
+        },
+        "widthClass": "normal",
+        "weightClass": "black"
+      }
+    },
+    {
+      "id": "stage-4-description",
+      "kind": "text",
+      "note": "Short stage timing Antes da alteração",
+      "grid": null,
+      "box": {
+        "x": 0.832,
+        "y": 0.7607,
+        "w": 0.0911,
+        "h": 0.0166
+      },
+      "px": {
+        "x": 1278,
+        "y": 779,
+        "w": 140,
+        "h": 17
+      },
+      "aspect": 8.2353,
+      "palette": [
+        {
+          "hex": "#f6f7f7",
+          "coverage": 0.766
+        },
+        {
+          "hex": "#7e8e99",
+          "coverage": 0.0816
+        },
+        {
+          "hex": "#4b5a69",
+          "coverage": 0.0674
+        },
+        {
+          "hex": "#bec3c9",
+          "coverage": 0.0496
+        },
+        {
+          "hex": "#253b4a",
+          "coverage": 0.0355
+        }
+      ],
+      "detail": {
+        "energy": 37.85
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null,
+      "surface": {
+        "flat": true,
+        "rules": false
+      },
+      "type": {
+        "comp": {
+          "lines": 1,
+          "glyphs": 17,
+          "capHeightPx": 8.2,
+          "inkIsDark": true,
+          "allCaps": true,
+          "advance": 0.7947,
+          "advTall": 0.7947,
+          "advX": null,
+          "gap": 0.1223,
+          "xRatio": null,
+          "stemW": 0.2333,
+          "contrast": 1.2284,
+          "serif": null,
+          "densTall": 0.668,
+          "densX": null,
+          "weight": 0.668
+        },
+        "widthClass": "wide",
+        "weightClass": "black"
+      }
+    }
+  ],
+  "compSha256": "ed4c37c03522df0fd9bab17ad2d5311466df02bd4ca449f08daa73d614368c39",
+  "regionsSource": {
+    "path": ".impeccable/build/regions.json",
+    "sha256": "97e3b382f67d354635465cb972a294c9c8df4fc9ddffa02f61bcecb951163d9c"
+  }
+}
