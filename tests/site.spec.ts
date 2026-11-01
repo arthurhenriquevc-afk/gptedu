@@ -63,3 +63,15 @@ test('link de etapa do serviço abre o corte na etapa correspondente e âncoras 
  await page.locator('#quando a.text-link').click();await expect(page).toHaveURL(/\?etapa=3#janelas$/);await expect(page.locator('#stage-detail-2')).toBeVisible();await expect(page.getByRole('button',{name:/03 Instalações/})).toHaveAttribute('aria-pressed','true');
  const bottom=await page.locator('#stage-detail-2').evaluate(e=>e.getBoundingClientRect().bottom);expect(bottom).toBeLessThanOrEqual(768);
 });
+test('comparação responde ao teclado e ao toque no celular sem rolar a página',async({browser})=>{
+ const context=await browser.newContext({viewport:{width:390,height:844},hasTouch:true,isMobile:true,reducedMotion:'reduce'});const page=await context.newPage();await page.goto('http://127.0.0.1:4321/');const slider=page.getByRole('slider');const hero=page.locator('[data-hero]');
+ await slider.focus();await page.keyboard.press('End');await expect(slider).toHaveValue('100');await expect(hero).toHaveCSS('--scan-edge','0%');await page.keyboard.press('Home');await expect(slider).toHaveValue('0');await page.keyboard.press('ArrowRight');await expect(slider).toHaveValue('1');
+ const box=(await slider.boundingBox())!;expect(box.height).toBeGreaterThanOrEqual(24);const scroll=await page.evaluate(()=>scrollY);
+ await page.touchscreen.tap(box.x+box.width-4,box.y+box.height/2);await expect.poll(async()=>Number(await slider.inputValue())).toBeGreaterThan(80);
+ await page.touchscreen.tap(box.x+4,box.y+box.height/2);await expect.poll(async()=>Number(await slider.inputValue())).toBeLessThan(20);expect(await page.evaluate(()=>scrollY)).toBe(scroll);
+ await context.close();
+});
+test('contato traz as dúvidas gerais sem repetir o preparo da solicitação',async({page})=>{
+ await page.goto('/contato/');const faq=page.locator('.faq-list details');await expect(faq).toHaveCount(4);await expect(page.locator('.faq-list')).not.toContainText('O que ajuda a preparar');
+ await faq.first().locator('summary').focus();await page.keyboard.press('Enter');await expect(faq.first().locator('p')).toBeVisible();
+});
