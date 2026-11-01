@@ -115,3 +115,11 @@ test('etapa da obra entra no resumo copiado',async({page,context})=>{
  await page.getByLabel('Nome',{exact:true}).fill('Pessoa de teste');await page.getByLabel('Etapa da obra ou do projeto').selectOption('Instalações aparentes, antes dos fechamentos');
  await page.getByRole('button',{name:'Copiar resumo'}).click();const text=await page.evaluate(()=>navigator.clipboard.readText());expect(text).toContain('Etapa: Instalações aparentes, antes dos fechamentos');expect(text).toContain('Serviço: As-built e infraestrutura MEP');
 });
+test('capturas reais substituem a imagem conceitual só nos serviços com material aprovado',async({page})=>{
+ const real=['as-built-mep','escaneamento-de-fachada','conferencia-de-excentricidade','locacao-de-estacas','levantamento-de-interiores'];
+ for(const slug of real){await page.goto(`/servicos/${slug}/`);const figure=page.locator('[data-real-image]');await expect(figure).toContainText('Captura real da UNION3D');await expect(page.getByText('Imagem conceitual de contexto')).toHaveCount(0);
+  const img=figure.locator('img');await expect(img).toHaveAttribute('alt',/.{40,}/);expect(await img.evaluate((el:HTMLImageElement)=>el.complete&&el.naturalWidth>0)).toBe(true);
+  const json=JSON.parse(fs.readFileSync(path.join('public',(await img.getAttribute('src'))!+'.json'),'utf8'));expect(json.source).toContain('drive.google.com');}
+ await page.goto('/servicos/as-built-mep/');const detail=page.locator('#finalidade figure img');await detail.scrollIntoViewIfNeeded();expect(await detail.evaluate((el:HTMLImageElement)=>el.complete&&el.naturalWidth>0)).toBe(true);
+ for(const slug of ['conferencia-de-topografia','mapeamento-aereo-com-drone','tour-virtual-decorado']){await page.goto(`/servicos/${slug}/`);await expect(page.locator('[data-real-image]')).toHaveCount(0);await expect(page.getByText('Imagem conceitual de contexto')).toBeVisible();}
+});

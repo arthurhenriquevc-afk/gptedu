@@ -66,6 +66,6 @@ Sem `PUBLIC_CONTACT_ENDPOINT`, o formulário somente prepara e copia um resumo n
 
 ## Materiais e pendências
 
-Todas as imagens atuais são conceituais e identificadas no site; não representam trabalhos realizados, escaneamentos reais ou evidências de precisão da UNION3D. As imagens WebP são locais e possuem sidecars de proveniência. Antes da publicação comercial, incorporar logotipo oficial, acervo e projetos autorizados, contatos reais, política de privacidade validada e confirmação técnica de métodos, entregáveis e modalidade do tour. Não adicionar clientes, estatísticas, garantias ou cases sem evidência.
+As imagens conceituais são identificadas no site e não representam trabalhos realizados, escaneamentos reais ou evidências de precisão da UNION3D. As capturas reais ficam em `public/images/real/`, aparecem com o rótulo “Captura real da UNION3D” em cinco páginas de serviço (`src/data/real-images.ts`) e vieram do inventário de mídias do Drive, recortadas sem nomes de projeto, ruas, datas ou interface; a autorização dos clientes ainda está pendente. As imagens WebP são locais e possuem sidecars de proveniência. Antes da publicação comercial, incorporar logotipo oficial, acervo e projetos autorizados, contatos reais, política de privacidade validada e confirmação técnica de métodos, entregáveis e modalidade do tour. Não adicionar clientes, estatísticas, garantias ou cases sem evidência.
 
 A versão é revisável localmente; receber solicitações reais e publicar exigem configuração externa ainda não fornecida.
