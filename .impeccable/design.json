@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T14:24:08.187Z",
+  "generatedAt": "2026-11-01T15:01:58.494Z",
   "title": "Design System: UNION3D",
   "extensions": {
     "colorMeta": {
@@ -40,12 +40,17 @@
       {
         "name": "windows-scroll",
         "value": "calc(650px + 110vh)",
-        "purpose": "Percurso de rolagem da seção fixa das janelas de obra; cada etapa permanece por cerca de 27% da altura da janela. Sem altura suficiente, a seção volta ao fluxo normal."
+        "purpose": "Percurso de rolagem da seção fixa das janelas de obra; cada etapa permanece por cerca de 27% da altura da janela. Sem altura suficiente, a seção volta ao fluxo normal. Links de serviço chegam com ?etapa=N: a etapa aparece selecionada e a rolagem para no início do trecho dela."
       },
       {
         "name": "stage-pan",
         "value": "500ms",
         "purpose": "Deslocamento do corte até a etapa selecionada no celular; desativado com movimento reduzido."
+      },
+      {
+        "name": "anchor-offset",
+        "value": "110px",
+        "purpose": "Recuo de rolagem do documento para âncoras internas; o título fica 30px abaixo do cabeçalho fixo de 80px, sem margem adicional nas seções."
       }
     ],
     "breakpoints": [
@@ -88,7 +93,7 @@
       "name": "Campo de formulário",
       "kind": "input",
       "refersTo": "field",
-      "description": "Campo identificado, sem rótulo substituído por placeholder.",
+      "description": "Campo identificado, sem rótulo substituído por placeholder. Campos obrigatórios usam mensagens de validação próprias em português, removidas assim que o campo é editado.",
       "html": "<label class=\"ds-field\">Nome<input placeholder=\"Seu nome\"></label>",
       "css": ".ds-field{display:flex;flex-direction:column;gap:7px;color:var(--text,#162f39);font:15px Arial,sans-serif}.ds-field input{padding:12px 14px;border:1px solid #9ba9ad;background:var(--paper,#f7f7f3);border-radius:8px;font:16px Arial,sans-serif}.ds-field input:focus-visible{outline:3px solid #002e40;outline-offset:5px}"
     },
@@ -102,7 +107,7 @@
     {
       "name": "Pergunta expansível",
       "kind": "custom",
-      "description": "Disclosure nativo de perguntas frequentes.",
+      "description": "Disclosure nativo de perguntas frequentes. A FAQ geral aparece na Home e no contato (sem a pergunta sobre preparo, já respondida ao lado do formulário); cada serviço tem as suas.",
       "html": "<details class=\"ds-faq\"><summary>Como os dados são entregues?</summary><p>Materiais e abrangência são definidos conforme o escopo.</p></details>",
       "css": ".ds-faq{border-top:1px solid #ccd2d0;border-bottom:1px solid #ccd2d0;color:#002e40;font:16px/1.6 Arial,sans-serif}.ds-faq summary{padding:20px 0;cursor:pointer;font-weight:500}.ds-faq summary:hover{text-decoration:underline}.ds-faq summary:focus-visible{outline:3px solid #002e40;outline-offset:5px}"
     }
