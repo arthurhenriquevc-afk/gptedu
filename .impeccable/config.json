@@ -1,1 +1,81 @@
-{"buildPath":"comp"}
+{
+  "buildPath": "comp",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "union3d-design-system-impec.html"
+        ],
+        "createdAt": "2026-11-01T15:26:32.456Z",
+        "reason": "User brief for the design system page asked for glow effects; glows are a demo layer that the page's Efeitos toggle turns off"
+      },
+      {
+        "rule": "radial-halo",
+        "value": "*",
+        "files": [
+          "union3d-design-system-impec.html"
+        ],
+        "createdAt": "2026-11-01T15:26:32.661Z",
+        "reason": "User brief asked for elegant animated section backgrounds and glow; decorative layer only, site CSS unchanged"
+      },
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "union3d-design-system-impec.html"
+        ],
+        "createdAt": "2026-11-01T15:26:32.863Z",
+        "reason": "User brief asked for animations in every fold; token ticker is aria-hidden, paused by Efeitos toggle and reduced motion"
+      },
+      {
+        "rule": "codex-grid-background",
+        "value": "*",
+        "files": [
+          "union3d-design-system-impec.html"
+        ],
+        "createdAt": "2026-11-01T15:26:33.025Z",
+        "reason": "User brief asked for animated backgrounds; survey grid is domain imagery for reality capture on this documentation page"
+      },
+      {
+        "rule": "em-dash-overuse",
+        "value": "*",
+        "files": [
+          "union3d-design-system-impec.html"
+        ],
+        "createdAt": "2026-11-01T15:26:33.228Z",
+        "reason": "Agent: false positive, the page has zero em dashes; detector counts CSS custom property prefixes such as --ink inside code"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "union3d-design-system-impec.html"
+        ],
+        "createdAt": "2026-11-01T15:26:33.509Z",
+        "reason": "Agent: flagged boxes are full-bleed media, sections with padded inner wrappers, and specimen frames that hold the site's own components with their own spacing"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "union3d-design-system-impec.html"
+        ],
+        "createdAt": "2026-11-01T15:26:33.685Z",
+        "reason": "Agent: page documents every literal color in global.css, including literal values such as the field border #7c8b90"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          "union3d-design-system-impec.html"
+        ],
+        "createdAt": "2026-11-01T15:26:33.871Z",
+        "reason": "Agent: system monospace is used only for code values on this documentation page and is labeled as not part of the site"
+      }
+    ]
+  }
+}
