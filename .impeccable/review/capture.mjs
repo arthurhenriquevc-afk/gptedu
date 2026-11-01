@@ -1,8 +1,10 @@
 import {chromium} from '@playwright/test';
 import fs from 'node:fs/promises';
-const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});
+import {existsSync} from 'node:fs';
+const executablePath=process.env.PLAYWRIGHT_CHROMIUM_PATH||(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined);
+const browser=await chromium.launch({executablePath,args:['--no-sandbox']});
 const names=[];const issues=[];
-for(const [name,width,height] of [['desktop',1536,1024],['tablet',768,1024],['mobile',390,844]]){
+for(const [name,width,height] of [['desktop',1536,1024],['laptop',1366,768],['tablet',768,1024],['mobile',390,844],['small',360,740]]){
  const page=await browser.newPage({viewport:{width,height},reducedMotion:'reduce'});
  const captures=[['home','/'],['service','/servicos/as-built-mep/'],['professionals','/servicos/profissionais/'],['contact','/contato/'],['about','/sobre/']];
  for(const [routeName,route]of captures){await page.goto('http://127.0.0.1:4321'+route);await page.evaluate(async()=>{document.querySelectorAll('img').forEach(img=>img.loading='eager');await Promise.all([...document.images].map(img=>img.decode().catch(()=>{})));await document.fonts.ready;});await page.screenshot({path:`.impeccable/review/${name}-${routeName}.png`,fullPage:true});names.push(`${name}-${routeName}.png`);if(routeName==='home')await page.screenshot({path:`.impeccable/review/${name}.png`});const over=await page.evaluate(()=>[...document.querySelectorAll('body *')].filter(el=>el.getBoundingClientRect().right>innerWidth+1).map(el=>({tag:el.tagName,cls:el.className})));if(over.length)issues.push({name,route,over});}

@@ -4,23 +4,48 @@ Website institucional em Astro e TypeScript, com saída estática. Implementaç�
 
 ## Desenvolvimento
 
-Requisitos: Node >=22.23.4, npm >=9.6.5 e dependências de `package-lock.json`.
+Requisitos: Node >=22.23.4, npm >=9.6.5 e dependências de `package-lock.json`. Validado em Windows 11 (Node 24.14.1, npm 11.12.1) e anteriormente em Linux.
 
 ```sh
 npm ci
+npx playwright install chromium
 npm run dev
 ```
 
-A telemetria do Astro é desativada pelos scripts para funcionar no ambiente em nuvem sem gravar configurações fora do workspace. Cada tarefa na nuvem já é isolada: use o checkout existente, sem criar worktree salvo solicitação explícita.
+Os scripts chamam a CLI do Astro por `scripts/astro.mjs`, que desativa a telemetria (`ASTRO_TELEMETRY_DISABLED=1`) em qualquer sistema operacional. A sintaxe anterior, `VAR=1 astro ...`, só funcionava em shells Unix.
 
 ```sh
-npm run check
-npm run build
-npm run preview -- --port 4321
-npm test
+npm run check      # checagem de tipos (astro check)
+npm run build      # gera dist/ (21 páginas)
+npm test           # Playwright; reutiliza um preview já ativo em 127.0.0.1:4321 ou inicia um
+npm run package    # gera artifacts/union3d-site-estatico.zip a partir de dist/
 ```
 
-Os testes usam Chromium em `/usr/bin/chromium`. Em outra máquina, ajuste `executablePath` em `playwright.config.ts` ou instale o navegador suportado pelo Playwright. O preview do Astro 7 pode iniciar como processo em segundo plano; use `npx astro preview status` e `npx astro preview stop` quando necessário. Não confundir um servidor local com uma URL pública de hospedagem.
+### Navegador dos testes
+
+`playwright.config.ts` usa, nesta ordem: o executável indicado em `PLAYWRIGHT_CHROMIUM_PATH`; `/usr/bin/chromium`, quando existe; ou o Chromium instalado por `npx playwright install chromium`. O mesmo critério vale para `.impeccable/review/capture.mjs`.
+
+### Preview local
+
+O preview serve `dist/`; execute `npm run build` antes. Em primeiro plano (Ctrl+C encerra):
+
+```sh
+npm run preview -- --port 4321
+```
+
+Em segundo plano, com status e encerramento pela própria CLI do Astro 7:
+
+```sh
+npm run preview -- --port 4321 --background
+npx astro preview status
+npx astro preview stop
+```
+
+O site fica em http://localhost:4321/. O script de preview usa `--host 0.0.0.0`, então o endereço também responde na rede local enquanto o servidor estiver ativo. Não confundir esse servidor local com uma URL pública de hospedagem.
+
+### Capturas de revisão
+
+Com o preview ativo, `node .impeccable/review/capture.mjs` grava em `.impeccable/review/` cinco páginas em 1536×1024, 1366×768, 768×1024, 390×844 e 360×740, com movimento reduzido, e registra rolagem horizontal em `capture-results.json`.
 
 ## Páginas e conteúdo
 
@@ -32,6 +57,8 @@ Home, diretório de serviços, duas categorias, dez páginas específicas de ser
 - `src/scripts/site.ts`: menu, filtros, comparação, etapas e formulário.
 - `docs/arquitetura.md`: decisões de arquitetura da informação.
 - `.impeccable/review/`: evidências de renderização e revisão.
+- `docs/revisao-2026-11-01.md`: defeitos encontrados, correções e pendências da revisão para uso comercial.
+- `scripts/`: execução multiplataforma do Astro, geração do pacote estático e LEIA-ME do pacote.
 
 ## Formulário
 

@@ -1,0 +1,7 @@
+UNION3D: versão estática para revisão
+
+Esta versão não foi publicada em hospedagem pública. Extraia os arquivos e sirva a pasta na raiz de um servidor HTTP. Abrir index.html diretamente por file:// não reproduz corretamente as rotas.
+Exemplo local (Windows, macOS ou Linux, com Python instalado): python -m http.server 8080
+Depois, acesse http://localhost:8080/
+
+Imagens conceituais, sem atribuição a trabalhos reais. Formulário sem destinatário: prepara e copia um resumo, sem envio. Contatos, acervo autorizado e texto final de privacidade aguardam validação. Rascunhos não indexados ficam em /rascunhos/.

@@ -19,11 +19,11 @@ const image=s.image==='interior'?'/images/interior.webp':'/images/hero-scan.webp
 <section class="content-section" id="finalidade"><h2>O que este serviço faz.</h2><p>{s.purpose}</p></section>
 <section class="content-section" id="quando"><h2>Quando faz sentido contratar.</h2><p>{s.timing}</p><ul>{s.situations.map(item=><li>{item}</li>)}</ul><a class="text-link" href="/#janelas">Relacionar à etapa da obra <Arrow/></a></section>
 <section class="content-section" id="execucao"><h2>Da necessidade ao registro.</h2><p>O planejamento começa pela finalidade e pelas informações disponíveis. A execução específica é alinhada antes da contratação.</p><ol class="execution-list">{s.process.map(([title,text])=><li><strong>{title}</strong><span>{text}</span></li>)}</ol></section>
-<section class="content-section" id="entregaveis"><h2>Entregáveis definidos pelo uso.</h2><p>As possibilidades abaixo precisam ser confirmadas no escopo. Não representam um pacote de entrega já contratado ou um conjunto obrigatório.</p><ul>{s.deliverables.map(item=><li>{item}</li>)}</ul><p class="scope-note"><strong>Limites e pontos a alinhar</strong>{s.limitation}</p></section>
-<section class="content-section"><h2>Informação que corresponde à finalidade.</h2><p>{s.benefit}</p><p>Objeto, método, cobertura e comunicação da entrega precisam ser coerentes entre si. As condições e limitações encontradas fazem parte desse alinhamento.</p></section>
+<section class="content-section" id="entregaveis"><h2>Entregáveis definidos pelo uso.</h2><p>Possibilidades a confirmar no escopo de cada contratação, não um pacote fixo.</p><ul>{s.deliverables.map(item=><li>{item}</li>)}</ul><p class="scope-note"><strong>Limites e pontos a alinhar</strong>{s.limitation}</p></section>
+<section class="content-section"><h2>Informação que corresponde à finalidade.</h2><p>{s.benefit}</p></section>
 <section class="content-section" id="solicitacao"><h2>O que ajuda a começar.</h2><p>{s.prepare}</p><p>Localização, área aproximada e prazo desejado ajudam a contextualizar a solicitação. Não é necessário reunir todos os dados para iniciar a conversa.</p><a class="text-link" href={`/contato/?servico=${s.slug}`}>Preparar uma solicitação <Arrow/></a></section>
 <div class="content-section" id="duvidas"><FAQ title="Dúvidas sobre esta atividade." items={s.faq}/></div>
 </div></div>
 <section class="related section"><div class="section-heading"><h2>Outras informações que podem se complementar.</h2><p>A relação depende da finalidade, da etapa e dos elementos abrangidos pelo projeto.</p></div><ServiceList items={related} compact/></section>
-<ContactCTA title={ctaTitles[s.slug]} text={s.prepare} service={s.slug}/>
+<ContactCTA title={ctaTitles[s.slug]} service={s.slug}/>
 </Layout>

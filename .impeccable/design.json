@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T13:32:21.946597+00:00",
+  "generatedAt": "2026-11-01T14:24:08.187Z",
   "title": "Design System: UNION3D",
   "extensions": {
     "colorMeta": {
@@ -15,7 +15,7 @@
     },
     "typographyMeta": {
       "display": {
-        "displayName": "Archivo — abertura",
+        "displayName": "Archivo, abertura",
         "purpose": "Título principal do hero; forte e legível."
       }
     },
@@ -36,6 +36,16 @@
         "name": "hero-duration",
         "value": "2200ms",
         "purpose": "Uma transição inicial interrompível."
+      },
+      {
+        "name": "windows-scroll",
+        "value": "calc(650px + 110vh)",
+        "purpose": "Percurso de rolagem da seção fixa das janelas de obra; cada etapa permanece por cerca de 27% da altura da janela. Sem altura suficiente, a seção volta ao fluxo normal."
+      },
+      {
+        "name": "stage-pan",
+        "value": "500ms",
+        "purpose": "Deslocamento do corte até a etapa selecionada no celular; desativado com movimento reduzido."
       }
     ],
     "breakpoints": [

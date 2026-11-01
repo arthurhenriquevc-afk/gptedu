@@ -145,7 +145,7 @@ export const services: Service[] = [
     slug:'tour-virtual-decorado',name:'Tour virtual decorado',audience:'profissionais',
     headline:'Apresentar o ambiente pela experiência do espaço.',
     summary:'Visualização espacial para apresentar ambientes decorados, com modalidade e recursos definidos na avaliação do projeto.',
-    purpose:'Um tour virtual permite explorar a apresentação de um ambiente. A modalidade oferecida pela UNION3D — captura de espaço físico, panoramas ou outra solução — precisa ser confirmada antes da definição comercial.',
+    purpose:'Um tour virtual permite explorar a apresentação de um ambiente. A modalidade oferecida pela UNION3D (captura de espaço físico, panoramas ou outra solução) precisa ser confirmada antes da definição comercial.',
     timing:'Quando o ambiente ou material necessário à modalidade escolhida estiver disponível, conforme a finalidade da apresentação.',
     situations:['Apresentar a configuração de um ambiente decorado.','Permitir uma leitura espacial complementar às imagens.','Apoiar a comunicação de espaços a clientes e equipes.'],
     process:[['Apresentação pretendida','Alinhar público, ambiente e finalidade.'],['Modalidade e recursos','Confirmar o tipo de tour, os materiais necessários e a forma de acesso.'],['Preparação da experiência','Organizar a solução e a entrega conforme o escopo confirmado.']],
