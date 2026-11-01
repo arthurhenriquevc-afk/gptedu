@@ -36,3 +36,17 @@ test('animação inicial termina com a representação disponível',async({page}
 test('navegação e conteúdo permanecem disponíveis sem JavaScript',async({browser})=>{
  const context=await browser.newContext({javaScriptEnabled:false,viewport:{width:390,height:844}});const page=await context.newPage();await page.goto('http://127.0.0.1:4321/');await expect(page.locator('#main-nav')).toBeVisible();await page.locator('.services-menu summary').click();await expect(page.locator('.mega-menu')).toBeVisible();await page.locator('.mega-menu').getByRole('link',{name:'Levantamento arquitetônico de interiores',exact:true}).click();await expect(page.locator('h1')).toContainText('O espaço existente');await page.goto('http://127.0.0.1:4321/contato/');await expect(page.getByRole('button',{name:'Preparar solicitação'})).toBeDisabled();await context.close();
 });
+test('menu de serviços fecha quando o foco sai pelo teclado',async({page})=>{
+ await page.setViewportSize({width:1366,height:768});await page.goto('/');await page.locator('.services-menu summary').focus();await page.keyboard.press('Enter');await expect(page.locator('.mega-menu')).toBeVisible();
+ for(let i=0;i<30&&await page.evaluate(()=>document.querySelector('.services-menu')!.contains(document.activeElement));i++)await page.keyboard.press('Tab');
+ await expect(page.locator('.services-menu')).not.toHaveAttribute('open','');await expect(page.locator('.mega-menu')).toBeHidden();
+});
+test('rolagem percorre as quatro etapas com permanência legível e detalhe visível',async({page})=>{
+ for(const [width,height] of [[1536,1024],[1366,768],[1280,720]]){await page.setViewportSize({width,height});await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/');
+  const {top,size}=await page.evaluate(()=>{const s=document.querySelector<HTMLElement>('[data-windows]')!;return {top:s.getBoundingClientRect().top+scrollY,size:s.offsetHeight};});const seen=new Map<number,number>();
+  for(let y=top-200;y<top+size;y+=40){await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),y);await page.waitForTimeout(40);const state=await page.evaluate(()=>({stage:[...document.querySelectorAll('[data-stage]')].findIndex(b=>b.getAttribute('aria-pressed')==='true'),bottom:document.querySelector('.window-detail:not([hidden])')!.getBoundingClientRect().bottom}));if(state.stage>0){seen.set(state.stage,(seen.get(state.stage)||0)+40);expect(state.bottom,`${width}x${height}`).toBeLessThanOrEqual(height);}}
+  expect([...seen.keys()].sort(),`${width}x${height}`).toEqual([1,2,3]);for(const [stage,distance] of seen)expect(distance,`${width}x${height} etapa ${stage}`).toBeGreaterThanOrEqual(height*.2);}
+});
+test('nenhuma página gerada produz rolagem horizontal em 360 px',async({page})=>{
+ await page.setViewportSize({width:360,height:740});for(const route of htmlRoutes()){await page.goto(route);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),route).toBe(true);}
+});

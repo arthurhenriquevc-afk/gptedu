@@ -91,7 +91,7 @@ A Home usa o display registrado nos tokens; páginas internas usam `clamp(40px,5
 
 Margens fluidas e largura máxima de 1800px. Grades assimétricas de duas colunas, sequências de quatro etapas, diretório em linhas e blocos de leitura. Os alinhamentos reaparecem entre seções, com escala e densidade diferentes.
 
-Breakpoints implementados: 1800, 1200, 900 e 600px. Até 900px, a navegação vira menu expansível e a área de contato ganha largura integral. No hero de tablet e celular, texto e imagem ficam em sequência para assegurar contraste. No celular, públicos e conteúdos internos viram uma coluna; etapas continuam acessíveis por botões.
+Breakpoints implementados: 1800, 1200, 900 e 600px. No hero integrado, a imagem é enquadrada a 40% (35% até 1200px) e o subtítulo fica limitado a 35vw (36vw até 1200px), para que o texto permaneça sobre a área clara e não sobre a estrutura em laptops de 1024 a 1536px. Até 900px, a navegação vira menu expansível e a área de contato ganha largura integral. No hero de tablet e celular, texto e imagem ficam em sequência para assegurar contraste. No celular, públicos e conteúdos internos viram uma coluna; etapas continuam acessíveis por botões.
 
 ## Elevation & Depth
 
@@ -103,13 +103,14 @@ Mídia com cantos retos. Elementos compactos usam 4px; botões, campos e notas u
 
 ## Components
 
-- Header aderente com marca tipográfica provisória; painel de serviços organizado por público. Versão móvel com botão, estado expandido, Escape e links em fluxo.
+- Header aderente com marca tipográfica provisória; painel de serviços organizado por público, que fecha com Escape, clique externo ou quando o foco do teclado sai dele. Versão móvel com botão, estado expandido, Escape e links em fluxo.
 - Botões de ênfase em `ink`, links contextuais sublinhados e setas SVG de traço consistente. Foco visível com contorno de 3px.
 - Diretório com linhas editoriais, busca e filtros por público; estado sem resultados oferece recuperação.
 - Perguntas com `details/summary` nativos. Campos sempre identificados, opcionais marcados e estado de operação explícito.
 - Duas imagens conceituais compõem a transformação do hero. Uma transição inicial de 2200ms e controle nativo, sem reprodução em loop. A máscara apenas mistura os estados, sem colorir o conteúdo.
-- Janelas de obra usam corte ilustrativo contínuo e estado ativo relacionado à rolagem normal. Botões permanecem disponíveis; celular e movimento reduzido usam seleção direta.
+- Janelas de obra usam corte ilustrativo contínuo e estado ativo relacionado à rolagem normal. Acima de 900px, cada etapa começa na linha de chamada correspondente do corte (8.8%, 31.9%, 57.4% e 83.8% da largura). A seção tem `calc(650px + 110vh)` de percurso, e cada etapa permanece por cerca de 27% da altura da janela; a altura do corte se reduz em janelas baixas e, quando o bloco fixo não cabe inteiro, a seção volta ao fluxo normal. Botões permanecem disponíveis; celular e movimento reduzido usam seleção direta. No celular, o corte tem 240px de altura e se desloca até a etapa escolhida em 500ms.
 - O formulário sem destino real prepara/copia o resumo e informa que não há envio.
+- No celular, trilha, índice “Neste serviço” e links do rodapé ganham área de toque vertical adicional; o controle de comparação tem 44px de altura até 900px.
 
 **The Accessible State Rule.** O conteúdo essencial permanece disponível sem animação; navegação, foco e estados não dependem apenas de cor.
 

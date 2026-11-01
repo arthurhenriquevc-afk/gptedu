@@ -5,6 +5,11 @@
     "desktop-professionals.png",
     "desktop-contact.png",
     "desktop-about.png",
+    "laptop-home.png",
+    "laptop-service.png",
+    "laptop-professionals.png",
+    "laptop-contact.png",
+    "laptop-about.png",
     "tablet-home.png",
     "tablet-service.png",
     "tablet-professionals.png",
@@ -14,7 +19,12 @@
     "mobile-service.png",
     "mobile-professionals.png",
     "mobile-contact.png",
-    "mobile-about.png"
+    "mobile-about.png",
+    "small-home.png",
+    "small-service.png",
+    "small-professionals.png",
+    "small-contact.png",
+    "small-about.png"
   ],
   "overflow": []
 }

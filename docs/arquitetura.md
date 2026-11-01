@@ -80,7 +80,7 @@ Como trabalhamos e tecnologia ficam em Sobre e em blocos curtos da Home; cada se
 5. Janelas de obra + problema da perda de acesso: compreensão do momento.
 6. Índice de serviços: acesso rápido e completo, distinto da narrativa temporal.
 7. Tecnologia e método: relação entre captura, dados e finalidade.
-8. Contratação + princípios de trabalho: confiança e clareza do próximo passo.
+8. Contratação: confiança e clareza do próximo passo. Os princípios de trabalho ficam em Sobre (retirados da Home em 2026-11-01 para evitar repetição).
 9. Aplicações: usos conceituais; sem falsos cases.
 10. FAQ: reduzir dúvidas antes do contato.
 11. Chamada final e footer: contato e orientação complementar.

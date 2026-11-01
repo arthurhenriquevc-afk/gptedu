@@ -14,14 +14,14 @@ A revisão desta implementação usa a escolha direta no chat, capturas reais em
 
 ## Verificação atual
 
-- `npm run check`: 27 arquivos, sem erros, avisos ou hints na última execução.
-- `npm run build`: 21 páginas geradas.
-- `npm test`: sete testes concluídos, todos aprovados na última execução.
-- Capturas em 1536×1024, 768×1024 e 390×844, com cinco páginas representativas por tamanho; nenhuma rolagem horizontal encontrada pela captura.
-- Teste de overflow também cobre larguras 360, 1024 e as demais acima.
-- Detector mecânico executado uma vez sobre `src`: retorno `[]`. Isso não equivale a auditoria visual ou certificação de acessibilidade.
+Última execução em 2026-11-01, Windows 11, Node 24.14.1, Chromium do Playwright 1.56.1, branch `revisao/refinamento-comercial`. Defeitos, correções e limites estão em `docs/revisao-2026-11-01.md`.
 
-A revisão independente e sua eventual lista de correções têm registros próprios. Atualizar este relatório apenas com resultados efetivamente executados.
+- `npm run check`: 29 arquivos, sem erros, avisos ou dicas.
+- `npm run build`: 21 páginas geradas.
+- `npm test`: dez testes, todos aprovados (sete originais e três novos: foco no menu de serviços, permanência das etapas na rolagem e ausência de rolagem horizontal em 360 px em todas as páginas).
+- Capturas em 1536×1024, 1366×768, 768×1024, 390×844 e 360×740, com cinco páginas representativas por tamanho; nenhuma rolagem horizontal encontrada.
+- Detector da Impeccable sem achados nas páginas renderizadas verificadas; 26 avisos consultivos de escala tipográfica no código-fonte. Isso não equivale a auditoria visual completa ou certificação de acessibilidade.
+- `artifacts/union3d-site-estatico.zip` regenerado com `npm run package` e conferido contra `dist/`.
 
 ## Limitações antes de uso comercial
 
