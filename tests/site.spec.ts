@@ -123,3 +123,11 @@ test('capturas reais substituem a imagem conceitual só nos serviços com materi
  await page.goto('/servicos/as-built-mep/');const detail=page.locator('#finalidade figure img');await detail.scrollIntoViewIfNeeded();expect(await detail.evaluate((el:HTMLImageElement)=>el.complete&&el.naturalWidth>0)).toBe(true);
  for(const slug of ['conferencia-de-topografia','mapeamento-aereo-com-drone','tour-virtual-decorado']){await page.goto(`/servicos/${slug}/`);await expect(page.locator('[data-real-image]')).toHaveCount(0);await expect(page.getByText('Imagem conceitual de contexto')).toBeVisible();}
 });
+test('Home liga cada problema ao serviço e reorganiza a lista no celular',async({page})=>{
+ await page.setViewportSize({width:1366,height:900});await page.goto('/');const items=page.locator('.problem-list a');await expect(items).toHaveCount(4);
+ for(const href of await items.evaluateAll(links=>links.map(a=>a.getAttribute('href')))){expect(href).toMatch(/^\/servicos\/[a-z-]+\/$/);}
+ const tops=await items.evaluateAll(links=>links.map(a=>Math.round(a.getBoundingClientRect().top)));expect(tops[0]).toBe(tops[1]);
+ await page.setViewportSize({width:390,height:844});await page.goto('/');const mobile=await page.locator('.problem-list a').evaluateAll(links=>links.map(a=>a.getBoundingClientRect().top));expect(mobile[1]).toBeGreaterThan(mobile[0]);
+ const hero=await page.evaluate(()=>{const p=document.querySelector('.hero-copy p')!;return p.scrollWidth<=p.clientWidth;});expect(hero).toBe(true);
+ await page.locator('.capture-next').click();await expect(page).toHaveURL(/\/contato\/$/);
+});
