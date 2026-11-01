@@ -9,6 +9,9 @@ export function getStaticPaths(){return services.map(service=>({params:{slug:ser
 interface Props { service: Service; }
 const {service:s}=Astro.props;
 const related=services.filter(item=>s.related.includes(item.slug));
+// Etapa do corte da Home relacionada a cada serviço (índice dos momentos em Windows.astro); sem entrada, abre em Fundações.
+const windowStage: Record<string,number> = {'locacao-de-linhas-de-eixo':1,'as-built-de-laje-protendida':1,'as-built-mep':2,'levantamento-de-interiores':3,'escaneamento-de-fachada':3};
+const windowsHref=s.slug in windowStage?`/?etapa=${windowStage[s.slug]+1}#janelas`:'/#janelas';
 const ctaTitles: Record<string,string> = {'conferencia-de-topografia':'Quais referências você precisa conferir?','mapeamento-aereo-com-drone':'Qual área precisa de uma leitura aérea?','locacao-de-estacas':'Prepare as referências para a etapa de fundações.','locacao-de-linhas-de-eixo':'Defina as referências da próxima execução.','conferencia-de-excentricidade':'Vamos alinhar a conferência dos elementos executados?','as-built-de-laje-protendida':'O que precisa ficar documentado da laje?','as-built-mep':'Planeje o registro antes dos fechamentos.','escaneamento-de-fachada':'Comece o retrofit pela condição existente.','levantamento-de-interiores':'Conte o que você vai projetar neste espaço.','tour-virtual-decorado':'Como você precisa apresentar o ambiente?'};
 const image=s.image==='interior'?'/images/interior.webp':'/images/hero-scan.webp';
 ---
@@ -17,7 +20,7 @@ const image=s.image==='interior'?'/images/interior.webp':'/images/hero-scan.webp
 <figure class="wide-image"><img src={image} width={s.image==='interior'?1536:2143} height={s.image==='interior'?1024:734} alt={s.image==='interior'?'Estudo conceitual de ambiente interior.':'Estudo conceitual de estrutura e representação geométrica.'} fetchpriority="high"/><figcaption>Imagem conceitual de contexto. Não representa execução, resultado técnico ou projeto da UNION3D.</figcaption></figure>
 <div class="service-content section"><aside aria-label="Nesta página"><h2>Neste serviço</h2><a href="#finalidade">Finalidade</a><a href="#quando">Quando contratar</a><a href="#execucao">Execução</a><a href="#entregaveis">Entregáveis</a><a href="#solicitacao">O que informar</a><a href="#duvidas">Dúvidas</a></aside><div>
 <section class="content-section" id="finalidade"><h2>O que este serviço faz.</h2><p>{s.purpose}</p></section>
-<section class="content-section" id="quando"><h2>Quando faz sentido contratar.</h2><p>{s.timing}</p><ul>{s.situations.map(item=><li>{item}</li>)}</ul><a class="text-link" href="/#janelas">Relacionar à etapa da obra <Arrow/></a></section>
+<section class="content-section" id="quando"><h2>Quando faz sentido contratar.</h2><p>{s.timing}</p><ul>{s.situations.map(item=><li>{item}</li>)}</ul><a class="text-link" href={windowsHref}>Relacionar à etapa da obra <Arrow/></a></section>
 <section class="content-section" id="execucao"><h2>Da necessidade ao registro.</h2><p>O planejamento começa pela finalidade e pelas informações disponíveis. A execução específica é alinhada antes da contratação.</p><ol class="execution-list">{s.process.map(([title,text])=><li><strong>{title}</strong><span>{text}</span></li>)}</ol></section>
 <section class="content-section" id="entregaveis"><h2>Entregáveis definidos pelo uso.</h2><p>Possibilidades a confirmar no escopo de cada contratação, não um pacote fixo.</p><ul>{s.deliverables.map(item=><li>{item}</li>)}</ul><p class="scope-note"><strong>Limites e pontos a alinhar</strong>{s.limitation}</p></section>
 <section class="content-section"><h2>Informação que corresponde à finalidade.</h2><p>{s.benefit}</p></section>

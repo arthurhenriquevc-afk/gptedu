@@ -50,3 +50,16 @@ test('rolagem percorre as quatro etapas com permanência legível e detalhe vis�
 test('nenhuma página gerada produz rolagem horizontal em 360 px',async({page})=>{
  await page.setViewportSize({width:360,height:740});for(const route of htmlRoutes()){await page.goto(route);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),route).toBe(true);}
 });
+test('formulário explica em português o que falta e não copia resumo vazio',async({page})=>{
+ await page.goto('/contato/');const submit=page.getByRole('button',{name:'Preparar solicitação'});const message=(selector:string)=>page.locator(selector).evaluate(e=>(e as HTMLInputElement).validationMessage);
+ await page.getByRole('button',{name:'Copiar resumo'}).click();await expect(page.getByRole('status')).toContainText('Preencha ao menos um campo');
+ await submit.click();await expect(page.locator('#nome')).toBeFocused();expect(await message('#nome')).toBe('Informe seu nome.');
+ await page.locator('#nome').fill('Pessoa de teste');expect(await message('#nome')).toBe('');await page.locator('#email').fill('teste');await submit.click();expect(await message('#email')).toContain('Confira o e-mail');
+ await page.locator('#email').fill('teste@example.com');await page.locator('#descricao').fill('Registrar o ambiente.');await submit.click();expect(await message('input[name="privacidade"]')).toBe('Confirme que leu as informações de privacidade.');
+});
+test('link de etapa do serviço abre o corte na etapa correspondente e âncoras ficam abaixo do cabeçalho',async({page})=>{
+ await page.setViewportSize({width:1366,height:768});await page.emulateMedia({reducedMotion:'no-preference'});await page.goto('/servicos/as-built-mep/');
+ for(const anchor of ['#execucao','#duvidas']){await page.locator(`.service-content aside a[href="${anchor}"]`).click();await expect.poll(()=>page.locator(anchor).evaluate(e=>Math.round(e.getBoundingClientRect().top))).toBe(110);}
+ await page.locator('#quando a.text-link').click();await expect(page).toHaveURL(/\?etapa=3#janelas$/);await expect(page.locator('#stage-detail-2')).toBeVisible();await expect(page.getByRole('button',{name:/03 Instalações/})).toHaveAttribute('aria-pressed','true');
+ const bottom=await page.locator('#stage-detail-2').evaluate(e=>e.getBoundingClientRect().bottom);expect(bottom).toBeLessThanOrEqual(768);
+});

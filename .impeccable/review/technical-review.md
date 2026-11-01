@@ -1,6 +1,6 @@
 # Verificação técnica direta
 
-> Atualização de 2026-11-01: nova revisão em Windows, com correções de leitura do hero, janelas de obra, foco, toque e conteúdo, e dez testes aprovados. Ver `docs/revisao-2026-11-01.md`. O texto abaixo registra a verificação anterior.
+> Atualização de 2026-11-01: nova revisão em Windows, com correções de leitura do hero, janelas de obra, foco, toque, formulário, navegação interna e conteúdo, e doze testes aprovados. Ver `docs/revisao-2026-11-01.md`. O texto abaixo registra a verificação anterior.
 
 Avaliação substituta; o agente independente não concluiu por limite de uso. Não constitui certificação WCAG nem auditoria exaustiva.
 
