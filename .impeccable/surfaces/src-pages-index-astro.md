@@ -26,7 +26,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Texto técnico para a implementação
 
-- Substituir “Em cada etapa, o registro em 3D garante informação confiável...” por “Antes de recobrir ou alterar, registre as condições acessíveis ao levantamento.”
+- Substituir “Em cada etapa, o registro em 3D garante informação confiável...” por “Registre antes de cobrir, para não precisar quebrar depois para descobrir.” (versão de 2026-11-01, adaptada da página de teste; ver `docs/mapeamento-editorial-home.md`).
 - Instalações: “Registre o que está visível antes dos fechamentos.” Não sugerir captura de instalações ocultas.
 - Evitar “registro completo e preciso”, “modelos 3D confiáveis” e “base segura” como garantias comerciais. Formatos, alcance e entregáveis dependem da definição do escopo.
 - Preservar a composição escolhida; as correções acima são de redação e integridade técnica.

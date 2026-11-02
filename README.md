@@ -56,6 +56,7 @@ Home, diretório de serviços, duas categorias, nove páginas específicas de se
 - `src/styles/global.css`: tokens, layouts e adaptações responsivas.
 - `src/scripts/site.ts`: menu, filtros, comparação, etapas e formulário.
 - `docs/arquitetura.md`: decisões de arquitetura da informação.
+- `docs/mapeamento-editorial-home.md`: origem, adaptação e exclusões dos textos da Home.
 - `.impeccable/review/`: evidências de renderização e revisão.
 - `docs/revisao-2026-11-01.md`: defeitos encontrados, correções e pendências da revisão para uso comercial.
 - `scripts/`: execução multiplataforma do Astro, geração do pacote estático e LEIA-ME do pacote.
