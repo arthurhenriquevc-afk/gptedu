@@ -1,13 +1,20 @@
 ---
 import { services } from '../data/services';
+import { realImages } from '../data/real-images';
 import Arrow from './Arrow.astro';
 const path = Astro.url.pathname;
+// Miniatura só onde já existe captura real aprovada; nos outros serviços o espaço fica vazio, sem imagem inventada.
 ---
-<header class="site-header">
-  <a class="brand" href="/" aria-label="UNION3D, página inicial"><img class="logo" src="/marca/union3d-horizontal.svg" width="255" height="78" alt="UNION3D"/><span class="brand-description">Reality capture<br/>para a construção</span></a>
+<header class="site-header" data-header>
+  <a class="brand" href="/" aria-label="UNION3D, página inicial"><img class="logo" src="/marca/union3d-horizontal.svg" width="255" height="78" alt="UNION3D"/></a>
+  <span class="nav-highlight" aria-hidden="true"></span>
   <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav"><span>Menu</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 8h18M3 16h18" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
   <nav id="main-nav" class="main-nav" aria-label="Navegação principal">
-    <details class="services-menu"><summary class:list={{current:path.startsWith('/servicos')}}>Serviços<svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary><div class="mega-menu"><div><a class="menu-category" href="/servicos/empresas/">Para empresas <Arrow/></a>{services.filter(s=>s.audience==='empresas').map(s=><a href={`/servicos/${s.slug}/`}>{s.name}</a>)}</div><div><a class="menu-category" href="/servicos/profissionais/">Para profissionais <Arrow/></a>{services.filter(s=>s.audience==='profissionais').map(s=><a href={`/servicos/${s.slug}/`}>{s.name}</a>)}<a class="menu-all" href="/servicos/">Explorar todos os serviços <Arrow/></a></div></div></details>
-    <a aria-current={path==='/sobre/'?'page':undefined} href="/sobre/">Sobre</a><a aria-current={path==='/aplicacoes/'?'page':undefined} href="/aplicacoes/">Aplicações</a><a aria-current={path==='/contato/'?'page':undefined} href="/contato/">Contato</a><a class="button button-small" href="/contato/">Solicitar orçamento <Arrow/></a>
+    <div class="nav-links">
+      <details class="services-menu"><summary class:list={['nav-link',{current:path.startsWith('/servicos')}]}>Serviços</summary><div class="mega-menu"><div class="mega-in"><ul class="service-tiles">{services.map((s,i)=>{const image=realImages[s.slug]?.main;return <li><a class="service-tile" href={`/servicos/${s.slug}/`}><span class="tile-media">{image&&<img src={image.src} width={image.width} height={image.height} alt="" loading="lazy" style={image.position?`object-position:${image.position}`:undefined}/>}</span><span class="tile-number" aria-hidden="true">{String(i+1).padStart(2,'0')}</span><span class="tile-audience" aria-hidden="true">Para {s.audience}</span><span class="tile-name">{s.name}</span></a></li>;})}</ul><div class="mega-aside"><span class="mega-label">Diretório</span><a href="/servicos/">Todos os serviços</a><a href="/servicos/empresas/">Para empresas</a><a href="/servicos/profissionais/">Para profissionais</a></div></div></div></details>
+      <a class="nav-link" aria-current={path==='/sobre/'?'page':undefined} href="/sobre/">Sobre</a><a class="nav-link" aria-current={path==='/aplicacoes/'?'page':undefined} href="/aplicacoes/">Aplicações</a><a class="nav-link" aria-current={path==='/contato/'?'page':undefined} href="/contato/">Contato</a>
+    </div>
+    <a class="button button-small header-cta" href="/contato/">Solicitar orçamento <Arrow/></a>
   </nav>
+  <span class="header-scrim" aria-hidden="true"></span>
 </header>

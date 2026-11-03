@@ -7,7 +7,17 @@ document.addEventListener('keydown',event=>{if(event.key==='Escape'){const isOpe
 document.addEventListener('click',event=>{if(menu?.open&&!menu.contains(event.target as Node))menu.open=false;});
 menu?.addEventListener('focusout',event=>{const next=event.relatedTarget as Node|null;if(menu.open&&next&&!menu.contains(next))menu.open=false;});
 nav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+const header=document.querySelector<HTMLElement>('[data-header]');
+const navLinks=header?.querySelector<HTMLElement>('.nav-links');
+// Fundo que desliza entre os links: medido em relação ao cabeçalho; na primeira entrada aparece no lugar, sem deslizar. Com o painel aberto, fica em Serviços.
+function moveHighlight(link:HTMLElement){if(!header)return;const snap=!header.classList.contains('is-hovering');if(snap)header.classList.add('is-snap');const bar=header.getBoundingClientRect(),box=link.getBoundingClientRect();header.style.setProperty('--hl-x',`${box.left-bar.left}px`);header.style.setProperty('--hl-w',`${box.width}px`);header.classList.add('is-hovering');if(snap){header.getBoundingClientRect();header.classList.remove('is-snap');}}
+function settleHighlight(){const summary=menu?.open&&innerWidth>900?menu.querySelector<HTMLElement>('summary'):null;if(summary)moveHighlight(summary);else header?.classList.remove('is-hovering');}
+if(header?.querySelector('.nav-highlight')&&navLinks){header.classList.add('has-highlight');navLinks.querySelectorAll<HTMLElement>('.nav-link').forEach(link=>{link.addEventListener('pointerenter',()=>moveHighlight(link));link.addEventListener('focus',()=>moveHighlight(link));});navLinks.addEventListener('pointerleave',settleHighlight);navLinks.addEventListener('focusout',event=>{if(!navLinks.contains(event.relatedTarget as Node))settleHighlight();});menu?.addEventListener('toggle',settleHighlight);}
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
+// Barra compacta: depois de 120px de rolagem o cabeçalho flutua; abaixo de 60px volta à barra inteira, com saída de 160ms.
+let compactHeader=false,compactTimer=0,compactPending=false;
+function updateHeader(){compactPending=false;if(!header)return;const y=scrollY;if(!compactHeader&&y>120){compactHeader=true;clearTimeout(compactTimer);header.classList.remove('is-leaving');header.classList.add('is-compact');}else if(compactHeader&&y<60){compactHeader=false;header.classList.add('is-leaving');compactTimer=window.setTimeout(()=>header.classList.remove('is-compact','is-leaving'),motion.matches?0:160);}}
+if(header){window.addEventListener('scroll',()=>{if(!compactPending){compactPending=true;requestAnimationFrame(updateHeader);}},{passive:true});updateHeader();}
 const hero=document.querySelector<HTMLElement>('[data-hero]');
 const slider=document.querySelector<HTMLInputElement>('[data-scan-control]');
 let scanFrame=0;
@@ -16,13 +26,19 @@ if(hero&&slider){setScan(55);slider.addEventListener('input',()=>{cancelAnimatio
 const windows=document.querySelector<HTMLElement>('[data-windows]');
 const stageButtons=Array.from(document.querySelectorAll<HTMLButtonElement>('[data-stage]'));
 let selectedStage=0;let manualStage=false;
-function selectStage(stage:number){selectedStage=stage;stageButtons.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===stage)));document.querySelectorAll<HTMLElement>('[data-stage-detail]').forEach((p,i)=>p.hidden=i!==stage);windows?.style.setProperty('--stage-position',`${stage*33.33}%`);}
+const stageControls=document.querySelector<HTMLElement>('.stage-controls');
+// Trecho percorrido do indicador: distância entre o primeiro ponto e o ponto da etapa, medida na tela (os pontos acompanham as linhas de chamada acima de 900px).
+function placeStageProgress(){if(!stageControls)return;const centers=stageButtons.map(b=>{const dot=(b.querySelector('.stage-dot')||b).getBoundingClientRect();return dot.left+dot.width/2;});const span=centers[centers.length-1]-centers[0];stageControls.style.setProperty('--progress',String(span>0?(centers[selectedStage]-centers[0])/span:selectedStage/3));}
+function selectStage(stage:number){selectedStage=stage;stageButtons.forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===stage));b.parentElement?.classList.toggle('is-done',i<stage);});document.querySelectorAll<HTMLElement>('[data-stage-detail]').forEach((p,i)=>p.hidden=i!==stage);windows?.style.setProperty('--stage-position',`${stage*33.33}%`);placeStageProgress();}
 stageButtons.forEach((b,i)=>b.addEventListener('click',()=>{manualStage=true;selectStage(i);}));
 let scrollPending=false;
 const windowsVisual=windows?.querySelector<HTMLElement>('.windows-visual');
 // Sem altura para a janela fixa inteira, o detalhe da etapa ficaria fora da tela: a seção volta ao fluxo normal.
 function fitWindows(){if(!windows||!windowsVisual)return;windows.dataset.static='false';const style=getComputedStyle(windowsVisual);windows.dataset.static=String(style.position==='sticky'&&windowsVisual.offsetHeight+parseFloat(style.top)>innerHeight);}
-fitWindows();window.addEventListener('resize',fitWindows);
+fitWindows();window.addEventListener('resize',()=>{fitWindows();placeStageProgress();});
+// Entrada das janelas de obra: cada bloco com data-reveal entra quando aparece, atrasado 0,1s pela posição na cascata. Com movimento reduzido nada é escondido.
+const reveals=Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+if(reveals.length&&!motion.matches&&'IntersectionObserver' in window){const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.replace('reveal-wait','is-revealed');revealObserver.unobserve(entry.target);}),{threshold:.15,rootMargin:'0px 0px -4% 0px'});reveals.forEach(el=>{el.style.setProperty('--reveal-delay',`${Math.min(Number(el.dataset.reveal)||0,5)*.1}s`);el.classList.add('reveal-wait');revealObserver.observe(el);});window.addEventListener('beforeprint',()=>reveals.forEach(el=>el.classList.replace('reveal-wait','is-revealed')));}
 function onScroll(){if(scrollPending||!windows||motion.matches||innerWidth<=600||windows.dataset.static==='true')return;scrollPending=true;requestAnimationFrame(()=>{const rect=windows.getBoundingClientRect();const available=rect.height-Math.min(innerHeight,650);if(rect.top<100&&rect.bottom>innerHeight*.5){const next=Math.max(0,Math.min(3,Math.floor((100-rect.top)/Math.max(1,available)*4)));if(next!==selectedStage&&!manualStage)selectStage(next);}else manualStage=false;scrollPending=false;});}
 window.addEventListener('scroll',onScroll,{passive:true});
 // Links de serviço chegam com ?etapa=N: a etapa já aparece selecionada e, com a janela fixa, a rolagem para no início do trecho dessa etapa.
